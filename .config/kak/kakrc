@@ -1,0 +1,5 @@
+colorscheme solarized-dark-termcolors
+add-highlighter global/ number-lines -hlcursor
+add-highlighter global/ column 72 default,black
+add-highlighter global/ column 100 red,black+b
+add-highlighter global/ regex \b(TODO|FIXME|NOTE)\b 0:default+rb

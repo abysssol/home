@@ -1,0 +1,35 @@
+Config
+    { font = "xft:Noto Sans:bold:size=11:antialias=true:hinting=true"
+    , bgColor = "#002b36"
+    , fgColor = "#839496"
+    , position = TopSize C 100 28
+    , template = " %StdinReader% }{ %disku%  |  %memory%  |  %cpu%  |  %date%  "
+    , commands =
+        [ Run StdinReader
+        , Run DiskU
+            [ ("/", "DISK: <free>, <freep>%") ]
+            [ "--Low", "20"
+            , "--High", "50"
+            , "--low", "#b58900"
+            , "--normal", "#859900"
+            , "--high", "#2aa198"
+            ] 20
+        , Run Memory
+            [ "--template", "RAM: <usedratio>%"
+            , "--Low", "50"
+            , "--High", "80"
+            , "--low", "#2aa198"
+            , "--normal", "#859900"
+            , "--high", "#b58900"
+            ] 10
+        , Run Cpu
+            [ "--template", "CPU: <total>%"
+            , "--Low", "40"
+            , "--High", "80"
+            , "--low", "#2aa198"
+            , "--normal", "#859900"
+            , "--high", "#b58900"
+            ] 10
+        , Run Date "<fc=#859900>%F, %a</fc>  %T" "date" 10
+        ]
+    }

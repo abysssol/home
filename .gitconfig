@@ -1,0 +1,7 @@
+[user]
+	name = Abyss
+	email = expectabyss@pm.me
+[init]
+	defaultBranch = master
+[core]
+	editor = kak
