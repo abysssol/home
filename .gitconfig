@@ -5,3 +5,4 @@
 	defaultBranch = master
 [core]
 	editor = kak
+	askPass = 
