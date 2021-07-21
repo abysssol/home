@@ -12,7 +12,7 @@ import XMonad.Layout.MultiToggle.Instances (StdTransformers(NBFULL, MIRROR))
 import XMonad.Layout.Renamed
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.GridVariants (Grid(Grid))
-import XMonad.Layout.NoBorders(smartBorders)
+import XMonad.Layout.NoBorders (smartBorders)
 import XMonad.Layout.PerWorkspace (onWorkspace)
 
 import qualified Data.Map as M
