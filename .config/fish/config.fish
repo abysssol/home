@@ -4,6 +4,7 @@ alias la "ll -a"
 alias cl "clear"
 
 alias git-config "git --git-dir=$HOME/.home-config --work-tree=$HOME"
+alias git-config-sys "sudo git --git-dir=/sys-config --work-tree=/"
 
 alias clippy-all "cargo clippy -- -D clippy::all -W clippy::pedantic -W clippy::nursery"
 alias clippy-res "cargo clippy -- -W clippy::restriction"
