@@ -82,7 +82,7 @@ scrolling:
 
 font:
   normal:
-    family: Monoid
+    family: Monoid Nerd Font
 
   bold:
     style: Bold
@@ -119,7 +119,7 @@ font:
 
 colors:
   primary:
-    background: '#073642'
+    background: '#002b36'
     foreground: '#839496'
 
     # The dimmed foreground color is calculated automatically if it is not present.
@@ -131,7 +131,7 @@ colors:
   # Allowed values are CellForeground and CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
   cursor:
-    text: '#002b36'
+    text: CellBackground
     cursor: '#93a1a1'
 
   # Vi mode cursor colors
@@ -150,9 +150,9 @@ colors:
   #
   # Allowed values are CellForeground and CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
-  #selection:
-  #  text: CellBackground
-  #  background: CellForeground
+  selection:
+    text: CellBackground
+    background: '#268bd2'
 
   # Search colors
   #
@@ -258,7 +258,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.95
+background_opacity: 1.0
 
 #selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
@@ -267,7 +267,7 @@ background_opacity: 0.95
   #save_to_clipboard: false
 
 # Allow terminal applications to change Alacritty's window title.
-#dynamic_title: true
+dynamic_title: true
 
 cursor:
   # Values for `style`:
