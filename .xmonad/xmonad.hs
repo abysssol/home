@@ -35,9 +35,7 @@ myConfig = desktopConfig
     , borderWidth = 2
     , normalBorderColor = brBlack
     , focusedBorderColor = blue
-    , startupHook = do
-        windows $ W.greedyView startupWorkspace
-        spawn "~/.xmonad/startup.sh"
+    , startupHook = myStartupHook
     }
 
 
@@ -64,9 +62,9 @@ myWorkspaces =
     , "9"
     ]
 
-wsHidden = ["bg"]
-
-wsKeys = [xK_grave] ++ [xK_1..xK_9]
+myStartupHook = do
+    windows $ W.greedyView startupWorkspace
+    spawn "~/.fehbg"
 
 myManageHook = custom <+> manageHook desktopConfig
     where custom = composeAll [className =? "Tor Browser" --> doFloat]
