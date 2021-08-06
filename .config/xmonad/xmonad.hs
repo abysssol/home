@@ -1,5 +1,6 @@
 import System.Exit (exitSuccess)
 import XMonad
+import XMonad.Hooks.ManageHelpers
 import XMonad.Actions.WithAll (killAll, sinkAll)
 import XMonad.Config.Desktop
 import XMonad.Hooks.DynamicLog
@@ -62,7 +63,10 @@ myStartupHook = do
 
 myManageHook = custom <+> manageHook desktopConfig
   where
-    custom = composeAll [className =? "Tor Browser" --> doFloat]
+    custom = composeAll
+      [ className =? "Tor Browser" --> doFloat
+      , isDialog --> doFloat
+      ]
 
 myLayoutHook =
   onWorkspace "bg" grid $
@@ -70,24 +74,23 @@ myLayoutHook =
   mkToggle (NBFULL ?? EOT) $
   mkToggle (MIRROR ?? EOT) $
   tall ||| grid
-
-tall =
-  renamed [Replace "tall"] $
-  magnifierOff $
-  ResizableTall 1 (3 / 100) (1 / 2) []
-
-grid =
-  renamed [Replace "grid"] $
-  magnifierOff $
-  Grid (16 / 10)
+    where
+      tall =
+        renamed [Replace "tall"] $
+        magnifierOff $
+        ResizableTall 1 (1 / 12) (1 / 2) []
+      grid =
+        renamed [Replace "grid"] $
+        magnifierOff $
+        Grid (3 / 2)
 
 xmobarConfig =
   xmobarPP
     { ppCurrent = xmobarColor white black . wrap "  " "  "
     , ppHidden = replace wsHidden ""
     , ppHiddenNoWindows = (\x -> "")
-    , ppTitle = color green . truncate 120 . (++) "    "
-    , ppSep = "    |    "
+    , ppTitle = color green . truncate 90 . (++) "  "
+    , ppSep = "  |  "
     , ppWsSep = "   "
     , ppUrgent = color red . wrap "!" "!"
     }
@@ -122,8 +125,8 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) =
   , ((m_s, xK_m), windows W.swapMaster)
   , ((m_s, xK_j), windows W.swapDown)
   , ((m_s, xK_k), windows W.swapUp)
-  , ((m_s, xK_h), repeat 3 $ sendMessage Shrink)
-  , ((m_s, xK_l), repeat 3 $ sendMessage Expand)
+  , ((m_s, xK_h), sendMessage Shrink)
+  , ((m_s, xK_l), sendMessage Expand)
   , ((m_s, xK_c), kill)
   , ((m_c_s, xK_c), killAll)
     -- Layout Control
@@ -149,11 +152,6 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) =
     m_s = m .|. s
     m_c = m .|. c
     m_c_s = m_c .|. s
-    repeat n x
-      | n > 1 = do
-        x
-        repeat (n - 1) x
-      | otherwise = do x
 
 -- Solarized Colors
 black = "#073642"
