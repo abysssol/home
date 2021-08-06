@@ -1,0 +1,30 @@
+menu = [
+    { name = "music", run = "vlc ~/music" },
+    "poweroff",
+    "reboot",
+]
+
+# [[entry]]
+# name = "browser"
+# run = "firefox"
+
+# [[entry]]
+# name = "terminal"
+# run = "alacritty"
+
+# [config]
+# ad-hoc = true # run commands not set in the config
+
+[config.dmenu]
+# bottom = true
+# fast - true
+# insensitive = false # true is default
+# lines = 8
+# monitor = 2
+# window-id = "<window-id>"
+prompt = "common"
+font = "Monoid Nerd Font:11"
+background = "#002b36"
+foreground = "#839496"
+selected-background = "#268bd2"
+selected-foreground = "#002b36"
