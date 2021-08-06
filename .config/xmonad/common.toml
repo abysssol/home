@@ -23,7 +23,7 @@ menu = [
 # monitor = 2
 # window-id = "<window-id>"
 prompt = "common"
-font = "Monoid Nerd Font:11"
+font = "Monoid Nerd Font:size=11"
 background = "#002b36"
 foreground = "#839496"
 selected-background = "#268bd2"
