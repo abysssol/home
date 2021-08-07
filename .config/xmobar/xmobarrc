@@ -1,5 +1,5 @@
 Config
-    { font = "xft:Noto Sans:bold:size=11,Noto Color Emoji,Noto Emoji,Monoid Nerd Font"
+    { font = "xft:Noto Sans:bold:size=11,Noto Color Emoji,Noto Emoji,Noto Music,Monoid Nerd Font"
     , bgColor = "#002b36"
     , fgColor = "#839496"
     , position = TopSize C 100 28
