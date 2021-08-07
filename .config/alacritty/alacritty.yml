@@ -82,7 +82,7 @@ scrolling:
 
 font:
   normal:
-    family: Monoid Nerd Font
+    family: Hack Nerd Font
 
   bold:
     style: Bold
@@ -93,7 +93,7 @@ font:
   bold_italic:
     style: Bold Italic
 
-  size: 10
+  size: 11
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
