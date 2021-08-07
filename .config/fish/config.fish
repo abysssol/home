@@ -1,5 +1,5 @@
-alias exa "exa --group-directories-first"
-alias ll "exa -lF"
+alias ls "exa --group-directories-first"
+alias ll "ls -lF"
 alias la "ll -a"
 alias cl "clear"
 alias term "alacritty -e sh -c $argv"
