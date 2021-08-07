@@ -5,7 +5,7 @@ alias cl "clear"
 alias term "alacritty -e sh -c $argv"
 
 alias git-config "git --git-dir=$HOME/.home-config --work-tree=$HOME"
-alias git-config-sys "sudo git --git-dir=/sys-config --work-tree=/"
+alias sudo-git-config "sudo git --git-dir=/sys-config --work-tree=/"
 
 alias clippy-all "cargo clippy -- -D clippy::all -W clippy::pedantic -W clippy::nursery"
 
