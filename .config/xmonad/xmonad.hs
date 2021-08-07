@@ -46,7 +46,7 @@ dmenuCommon = "dmenu-manager ~/.config/xmonad/common.toml"
 dmenuRun =
   "dmenu_run -i " ++
   "-p 'run: ' " ++
-  "-fn 'Hack Nerd Font:11' " ++
+  "-fn 'Hack Nerd Font:size=16' " ++
   "-nb '" ++ brBlack ++ "' " ++
   "-nf '" ++ brBlue ++ "' " ++
   "-sb '" ++ blue ++ "' " ++
