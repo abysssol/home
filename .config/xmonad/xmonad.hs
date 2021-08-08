@@ -7,7 +7,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks (ToggleStruts(..))
 import XMonad.Layout.GridVariants (Grid(Grid))
 import XMonad.Layout.Magnifier
-import XMonad.Layout.MultiToggle (EOT(EOT), (??), mkToggle)
+import XMonad.Layout.MultiToggle (single, mkToggle)
 import XMonad.Layout.MultiToggle.Instances (StdTransformers(MIRROR, NBFULL))
 import XMonad.Layout.NoBorders (smartBorders)
 import XMonad.Layout.PerWorkspace (onWorkspace)
@@ -68,21 +68,22 @@ myManageHook = custom <+> manageHook desktopConfig
       , isDialog --> doFloat
       ]
 
-myLayoutHook =
-  onWorkspace "bg" grid $
-  smartBorders $
-  mkToggle (NBFULL ?? EOT) $
-  mkToggle (MIRROR ?? EOT) $
-  tall ||| grid
-    where
-      tall =
-        renamed [Replace "tall"] $
-        magnifierOff $
-        ResizableTall 1 (1 / 12) (1 / 2) []
-      grid =
-        renamed [Replace "grid"] $
-        magnifierOff $
-        Grid (3 / 2)
+myLayoutHook = onWorkspace "bg" grid $ tall ||| grid
+  where
+    tall =
+      renamed [Replace "tall"] $
+      mkToggle (single NBFULL) $
+      mkToggle (single MIRROR) $
+      smartBorders $
+      magnifierOff $
+      ResizableTall 1 (1 / 12) (1 / 2) []
+    grid =
+      renamed [Replace "grid"] $
+      mkToggle (single NBFULL) $
+      mkToggle (single MIRROR) $
+      smartBorders $
+      magnifiercz (11 / 6) $
+      Grid (3 / 2)
 
 xmobarConfig =
   xmobarPP
@@ -113,9 +114,9 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) =
   , ((m_s, xK_q), io exitSuccess)
     -- Common Programs
   , ((m, xK_q), spawn "xmonad --recompile; xmonad --restart")
-  , ((m, xK_b), spawn browser)
   , ((m, xK_Return), spawn $ XMonad.terminal conf)
   , ((m_s, xK_z), spawn screenLocker)
+  , ((m, xK_b), spawn browser)
   , ((m_s, xK_b), spawn dmenuCommon)
   , ((m, xK_p), spawn dmenuRun)
     -- Window Control
@@ -125,17 +126,15 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) =
   , ((m_s, xK_m), windows W.swapMaster)
   , ((m_s, xK_j), windows W.swapDown)
   , ((m_s, xK_k), windows W.swapUp)
-  , ((m_s, xK_h), sendMessage Shrink)
-  , ((m_s, xK_l), sendMessage Expand)
   , ((m_s, xK_c), kill)
   , ((m_c_s, xK_c), killAll)
     -- Layout Control
   , ((m, xK_Tab), sendMessage NextLayout)
-  , ((m_s, xK_space), sendMessage (Toggle)) -- toggle magnifier
+  , ((m_s, xK_space), sendMessage $ Toggle) -- toggle magnifier
   , ((m_c, xK_space), sendMessage $ MT.Toggle MIRROR)
   , ((m, xK_space), sendMessage (MT.Toggle NBFULL) >> sendMessage ToggleStruts)
-  , ((m, xK_comma), sendMessage (IncMasterN 1))
-  , ((m, xK_period), sendMessage (IncMasterN (-1)))
+  , ((m_s, xK_h), sendMessage Shrink)
+  , ((m_s, xK_l), sendMessage Expand)
   , ((m, xK_f), withFocused float)
   , ((m_s, xK_f), withFocused $ windows . W.sink)
   , ((m_c_s, xK_f), sinkAll)
