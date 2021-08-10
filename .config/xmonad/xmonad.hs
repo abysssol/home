@@ -26,7 +26,7 @@ main = xmonad =<< statusBar "xmobar" xmobarConfig toggleStrutsKey myConfig
 
 myConfig =
   desktopConfig
-    { terminal = myTerminal
+    { terminal = "alacritty"
     , modMask = mod4Mask
     , focusFollowsMouse = True
     , workspaces = myWorkspaces
@@ -34,18 +34,17 @@ myConfig =
     , manageHook = myManageHook
     , layoutHook = myLayoutHook
     , borderWidth = 2
-    , normalBorderColor = brBlack
+    , normalBorderColor = black
     , focusedBorderColor = blue
     , startupHook = myStartupHook
     }
 
 browser = "firefox"
-myTerminal = "alacritty"
 screenLocker = "i3lock -ei /usr/share/backgrounds/abyss-locked.png"
+dmenuSystem = "dmenu-manager ~/.config/xmonad/system.toml"
 dmenuCommon = "dmenu-manager ~/.config/xmonad/common.toml"
 dmenuRun =
-  "dmenu_run -i " ++
-  "-p 'run: ' " ++
+  "dmenu_run -i -p 'run: ' " ++
   "-fn 'Hack Nerd Font:size=16' " ++
   "-nb '" ++ brBlack ++ "' " ++
   "-nf '" ++ brBlue ++ "' " ++
@@ -53,12 +52,11 @@ dmenuRun =
   "-sf '" ++ brBlack ++ "'"
 
 wsKeys = [xK_grave] ++ [xK_1 .. xK_9]
-myWorkspaces = ["bg", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+myWorkspaces = ["bg", "web", "dev", "doc", "sys", "5", "6", "7", "8", "9"]
 wsHidden = ["bg"]
-startupWorkspace = "1"
 
 myStartupHook = do
-  windows $ W.greedyView startupWorkspace
+  windows $ W.greedyView "web"
   spawn "~/.fehbg"
 
 myManageHook = custom <+> manageHook desktopConfig
@@ -90,9 +88,9 @@ xmobarConfig =
     { ppCurrent = xmobarColor white black . wrap "  " "  "
     , ppHidden = replace wsHidden ""
     , ppHiddenNoWindows = (\x -> "")
-    , ppTitle = color green . truncate 90 . (++) "  "
+    , ppTitle = color green . truncate 72 . (++) "  "
     , ppSep = "  |  "
-    , ppWsSep = "   "
+    , ppWsSep = "  "
     , ppUrgent = color red . wrap "!" "!"
     }
   where
@@ -113,11 +111,11 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) =
   [ ((m, xK_n), refresh)
   , ((m_s, xK_q), io exitSuccess)
     -- Common Programs
-  , ((m, xK_q), spawn "xmonad --recompile; xmonad --restart")
   , ((m, xK_Return), spawn $ XMonad.terminal conf)
   , ((m_s, xK_z), spawn screenLocker)
   , ((m, xK_b), spawn browser)
-  , ((m_s, xK_b), spawn dmenuCommon)
+  , ((m, xK_q), spawn dmenuSystem)
+  , ((m_s, xK_p), spawn dmenuCommon)
   , ((m, xK_p), spawn dmenuRun)
     -- Window Control
   , ((m, xK_m), windows W.focusMaster)

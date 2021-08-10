@@ -1,8 +1,13 @@
+entries = [
+    "poweroff",
+    "reboot",
+]
+
 [menu]
-music = "vlc ~/music"
+"restart xmonad" = "xmonad --recompile; xmonad --restart"
 
 [config.dmenu]
-prompt = "common:"
+prompt = "system:"
 font = "Hack Nerd Font:size=16"
 background = "#002b36"
 foreground = "#839496"
