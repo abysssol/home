@@ -3,3 +3,10 @@ add-highlighter global/ number-lines -hlcursor
 add-highlighter global/ column 72 default,black
 add-highlighter global/ column 100 red,black+b
 add-highlighter global/ regex \b(TODO|FIXME|NOTE)\b 0:default+rb
+
+eval %sh{kak-lsp --kakoune -s $kak_session}
+hook global WinSetOption filetype=(rust|c|cpp) %{
+        lsp-enable-window
+}
+
+map global user l %{: enter-user-mode lsp<ret>} -docstring "LSP mode"
