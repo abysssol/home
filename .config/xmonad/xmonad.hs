@@ -1,6 +1,7 @@
 import System.Exit (exitSuccess)
 import XMonad
 import XMonad.Hooks.ManageHelpers
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Actions.WithAll (killAll, sinkAll)
 import XMonad.Config.Desktop
 import XMonad.Hooks.DynamicLog
@@ -25,7 +26,7 @@ import qualified XMonad.StackSet as W
 main = xmonad =<< statusBar "xmobar" xmobarConfig toggleStrutsKey myConfig
 
 myConfig =
-  desktopConfig
+  ewmh $ desktopConfig
     { terminal = "alacritty"
     , modMask = mod4Mask
     , focusFollowsMouse = True
@@ -37,6 +38,7 @@ myConfig =
     , normalBorderColor = black
     , focusedBorderColor = blue
     , startupHook = myStartupHook
+    , handleEventHook = handleEventHook def <+> fullscreenEventHook
     }
 
 browser = "firefox"
@@ -52,7 +54,7 @@ dmenuRun =
   "-sf '" ++ brBlack ++ "'"
 
 wsKeys = [xK_grave] ++ [xK_1 .. xK_9]
-myWorkspaces = ["bg", "web", "dev", "doc", "sys", "5", "6", "7", "8", "9"]
+myWorkspaces = ["bg", "web", "dev", "doc", "sys", "steam", "6", "7", "8", "9"]
 wsHidden = ["bg"]
 
 myStartupHook = do
@@ -63,6 +65,7 @@ myManageHook = custom <+> manageHook desktopConfig
   where
     custom = composeAll
       [ className =? "Tor Browser" --> doFloat
+      , className =? "Steam" --> doShift "steam"
       , isDialog --> doFloat
       ]
 
@@ -80,7 +83,7 @@ myLayoutHook = onWorkspace "bg" grid $ tall ||| grid
       mkToggle (single NBFULL) $
       mkToggle (single MIRROR) $
       smartBorders $
-      magnifiercz (11 / 6) $
+      magnifiercz (5 / 3) $
       Grid (3 / 2)
 
 xmobarConfig =
@@ -88,7 +91,7 @@ xmobarConfig =
     { ppCurrent = xmobarColor white black . wrap "  " "  "
     , ppHidden = replace wsHidden ""
     , ppHiddenNoWindows = (\x -> "")
-    , ppTitle = color green . truncate 108 . (++) "  "
+    , ppTitle = color green . truncate 72 . (++) "  "
     , ppSep = "  |  "
     , ppWsSep = "  "
     , ppUrgent = color red . wrap "!" "!"

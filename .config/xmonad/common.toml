@@ -1,5 +1,6 @@
 [menu]
 music = "vlc ~/music"
+steam = "steam"
 
 [config.dmenu]
 prompt = "common:"
