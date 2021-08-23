@@ -5,9 +5,9 @@ import XMonad.Hooks.EwmhDesktops
 import XMonad.Actions.WithAll (killAll, sinkAll)
 import XMonad.Config.Desktop
 import XMonad.Hooks.DynamicLog
-import XMonad.Hooks.ManageDocks (ToggleStruts(..))
-import XMonad.Layout.GridVariants (Grid(Grid))
+import XMonad.Hooks.ManageDocks
 import XMonad.Layout.Magnifier
+import XMonad.Layout.GridVariants (Grid(Grid))
 import XMonad.Layout.MultiToggle (single, mkToggle)
 import XMonad.Layout.MultiToggle.Instances (StdTransformers(MIRROR, NBFULL))
 import XMonad.Layout.NoBorders (smartBorders)
@@ -15,6 +15,9 @@ import XMonad.Layout.PerWorkspace (onWorkspace)
 import XMonad.Layout.Renamed
 import XMonad.Layout.ResizableTile
 
+import System.Taffybar.Support.PagerHints (pagerHints)
+
+import qualified XMonad.Layout.Magnifier as Magnifier
 import qualified Data.Map as M
 import qualified XMonad.Layout.MultiToggle as MT (Toggle(..))
 import qualified XMonad.Layout.ToggleLayouts as T
@@ -23,10 +26,10 @@ import qualified XMonad.Layout.ToggleLayouts as T
   )
 import qualified XMonad.StackSet as W
 
-main = xmonad =<< statusBar "xmobar" xmobarConfig toggleStrutsKey myConfig
+main = xmonad myConfig
 
-myConfig =
-  ewmh $ desktopConfig
+myConfig = docks $ ewmh $ pagerHints
+  desktopConfig
     { terminal = "alacritty"
     , modMask = mod4Mask
     , focusFollowsMouse = True
@@ -48,10 +51,10 @@ dmenuCommon = "dmenu-manager ~/.config/xmonad/common.toml"
 dmenuRun =
   "dmenu_run -i -p 'run: ' " ++
   "-fn 'Hack Nerd Font:size=16' " ++
-  "-nb '" ++ brBlack ++ "' " ++
-  "-nf '" ++ brBlue ++ "' " ++
+  "-nb '" ++ base03 ++ "' " ++
+  "-nf '" ++ base0 ++ "' " ++
   "-sb '" ++ blue ++ "' " ++
-  "-sf '" ++ brBlack ++ "'"
+  "-sf '" ++ base03 ++ "'"
 
 wsKeys = [xK_grave] ++ [xK_1 .. xK_9]
 myWorkspaces = ["bg", "web", "dev", "doc", "sys", "steam", "6", "7", "8", "9"]
@@ -60,6 +63,7 @@ wsHidden = ["bg"]
 myStartupHook = do
   windows $ W.greedyView "web"
   spawn "~/.fehbg"
+  spawn "pkill taffybar; taffybar"
 
 myManageHook = custom <+> manageHook desktopConfig
   where
@@ -75,38 +79,17 @@ myLayoutHook = onWorkspace "bg" grid $ tall ||| grid
       renamed [Replace "tall"] $
       mkToggle (single NBFULL) $
       mkToggle (single MIRROR) $
+      avoidStruts $
       smartBorders $
       magnifierOff $
       ResizableTall 1 (1 / 12) (1 / 2) []
     grid =
       renamed [Replace "grid"] $
       mkToggle (single NBFULL) $
-      mkToggle (single MIRROR) $
+      avoidStruts $
       smartBorders $
       magnifiercz (5 / 3) $
       Grid (3 / 2)
-
-xmobarConfig =
-  xmobarPP
-    { ppCurrent = xmobarColor white black . wrap "  " "  "
-    , ppHidden = replace wsHidden ""
-    , ppHiddenNoWindows = (\x -> "")
-    , ppTitle = color green . truncate 72 . (++) "  "
-    , ppSep = "  |  "
-    , ppWsSep = "  "
-    , ppUrgent = color red . wrap "!" "!"
-    }
-  where
-    replace x y z
-      | z `elem` x = y
-      | otherwise = z
-    truncate max str
-      | length str > max = take max str ++ " ..."
-      | otherwise = str
-    color fg = xmobarColor fg ""
-
-
-toggleStrutsKey XConfig {XMonad.modMask = m} = (m, xK_s)
 
 myKeys :: XConfig Layout -> M.Map (KeyMask, KeySym) (X ())
 myKeys conf@(XConfig {XMonad.modMask = modMask}) =
@@ -131,9 +114,10 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) =
   , ((m_c_s, xK_c), killAll)
     -- Layout Control
   , ((m, xK_Tab), sendMessage NextLayout)
-  , ((m_s, xK_space), sendMessage $ Toggle) -- toggle magnifier
-  , ((m_c, xK_space), sendMessage $ MT.Toggle MIRROR)
-  , ((m, xK_space), sendMessage (MT.Toggle NBFULL) >> sendMessage ToggleStruts)
+  , ((m, xK_space), sendMessage $ MT.Toggle NBFULL)
+  , ((m_c, xK_space), sendMessage ToggleStruts)
+  , ((m_s, xK_space), sendMessage $ Toggle)
+  , ((m_c_s, xK_space), sendMessage $ MT.Toggle MIRROR)
   , ((m_s, xK_h), sendMessage Shrink)
   , ((m_s, xK_l), sendMessage Expand)
   , ((m, xK_f), withFocused float)
@@ -154,20 +138,22 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) =
     m_c_s = m_c .|. s
 
 -- Solarized Colors
-black = "#073642"
-white = "#eee8d5"
-red = "#dc322f"
+black = base02
+white = base2
 yellow = "#b58900"
-green = "#859900"
-cyan = "#2aa198"
-blue = "#268bd2"
+orange = "#cb4b16"
+red = "#dc322f"
 magenta = "#d33682"
+violet = "#6c71c4"
+blue = "#268bd2"
+cyan = "#2aa198"
+green = "#859900"
 
-brBlack = "#002b36"
-brWhite = "#fdf6e3"
-brRed = "#cb4b16"
-brYellow = "#657b83"
-brGreen = "#586e75"
-brCyan = "#93a1a1"
-brBlue = "#839496"
-brMagenta = "#6c71c4"
+base03 = "#002b36"
+base02 = "#073642"
+base01 = "#586e75"
+base00 = "#657b83"
+base0 = "#839496"
+base1 = "#93a1a1"
+base2 = "#eee8d5"
+base3 = "#fdf6e3"
