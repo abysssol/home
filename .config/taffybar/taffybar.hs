@@ -41,7 +41,7 @@ layout = layoutNew LayoutConfig
 
 title = windowsNew WindowsConfig
   { getMenuLabel = truncatedGetMenuLabel 108
-  , getActiveLabel = truncatedGetActiveLabel 72
+  , getActiveLabel = truncatedGetActiveLabel 60
   }
 
 workspaces = workspacesNew defaultWorkspacesConfig { showWorkspaceFn = (\x ->
