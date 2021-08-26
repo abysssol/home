@@ -21,7 +21,7 @@
 @define-color transparent rgba(0.0, 0.0, 0.0, 0.0);
 @define-color black @base02;
 @define-color white @base2;
-@define-color lighten rgba(255, 255, 255, 0.2);
+@define-color lighten rgba(255, 255, 255, 0.1);
 
 /* Top level styling */
 
