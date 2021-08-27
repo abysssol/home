@@ -3,8 +3,8 @@ alias ll "ls -lF"
 alias la "ll -a"
 alias cl "clear"
 
-alias git-config "git --git-dir=$HOME/.home-config.git --work-tree=$HOME"
-alias sudo-git-config "sudo git --git-dir=/.sys-config.git --work-tree=/"
+alias git-config "git --git-dir=$HOME/.home.git --work-tree=$HOME"
+alias sudo-git-config "sudo git --git-dir=/.system.git --work-tree=/"
 
 alias clippy-all "cargo clippy -- -D clippy::all -W clippy::pedantic -W clippy::nursery"
 
