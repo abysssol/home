@@ -9,7 +9,7 @@ alias sudo-git-config "sudo git --git-dir=/.system.git --work-tree=/"
 alias clippy-all "cargo clippy -- -D clippy::all -W clippy::pedantic -W clippy::nursery"
 
 function term
-    alacritty -e fish -c $argv & disown
+    alacritty -e fish -c "$argv" & disown
 end
 
 if test -d $HOME/.cargo/bin/
