@@ -9,7 +9,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Layout.Magnifier
 import XMonad.Layout.GridVariants (Grid(Grid))
 import XMonad.Layout.MultiToggle (single, mkToggle)
-import XMonad.Layout.MultiToggle.Instances (StdTransformers(MIRROR, NBFULL))
+import XMonad.Layout.MultiToggle.Instances (StdTransformers(NBFULL))
 import XMonad.Layout.NoBorders (smartBorders)
 import XMonad.Layout.PerWorkspace (onWorkspace)
 import XMonad.Layout.Renamed
@@ -78,7 +78,6 @@ myLayoutHook = onWorkspace "bg" grid $ tall ||| grid
     tall =
       renamed [Replace "tall"] $
       mkToggle (single NBFULL) $
-      mkToggle (single MIRROR) $
       avoidStruts $
       smartBorders $
       magnifierOff $
@@ -117,7 +116,6 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) =
   , ((m, xK_space), sendMessage $ MT.Toggle NBFULL)
   , ((m_c, xK_space), sendMessage ToggleStruts)
   , ((m_s, xK_space), sendMessage $ Toggle)
-  , ((m_c_s, xK_space), sendMessage $ MT.Toggle MIRROR)
   , ((m_s, xK_h), sendMessage Shrink)
   , ((m_s, xK_l), sendMessage Expand)
   , ((m, xK_f), withFocused float)

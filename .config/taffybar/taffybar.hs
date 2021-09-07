@@ -10,9 +10,9 @@ import System.Taffybar.Widget.Generic.PollingGraph
 main = startTaffybar myConfig
 
 myConfig = toTaffyConfig defaultSimpleTaffyConfig
-    { startWidgets = [ layout, workspaces ]
+    { startWidgets = [ layout, workspaces, tray ]
     , centerWidgets = [ title ]
-    , endWidgets = [ time, date, cpu, memory, disk, tray ]
+    , endWidgets = [ time, date, cpu, memory, disk ]
     , widgetSpacing = 18
     , barHeight = 36
     }
@@ -40,14 +40,14 @@ layout = layoutNew LayoutConfig
       " ||") }
 
 title = windowsNew WindowsConfig
-  { getMenuLabel = truncatedGetMenuLabel 108
+  { getMenuLabel = truncatedGetMenuLabel 100
   , getActiveLabel = truncatedGetActiveLabel 60
   }
 
 workspaces = workspacesNew defaultWorkspacesConfig { showWorkspaceFn = (\x ->
   case (workspaceName x, workspaceState x) of
-    ("bg", Hidden) -> False
     (_, Empty) -> False
+    ("bg", Hidden) -> False
     otherwise -> True
   ) }
 
