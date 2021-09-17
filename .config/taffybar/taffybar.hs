@@ -10,7 +10,7 @@ import System.Taffybar.Widget.Generic.PollingGraph
 main = startTaffybar myConfig
 
 myConfig = toTaffyConfig defaultSimpleTaffyConfig
-    { startWidgets = [ layout, workspaces, tray ]
+    { startWidgets = [ tray, layout, workspaces ]
     , centerWidgets = [ title ]
     , endWidgets = [ time, date, cpu, memory, disk ]
     , widgetSpacing = 18
