@@ -1,6 +1,7 @@
 [menu]
 music = "vlc ~/music"
 steam = "steam"
+minecraft = "multimc"
 
 [config.dmenu]
 prompt = "common:"
