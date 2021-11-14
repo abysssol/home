@@ -100,8 +100,8 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) =
   , ((m_s, xK_z), spawn screenLocker)
   , ((m, xK_b), spawn browser)
   , ((m, xK_q), spawn dmenuSystem)
-  , ((m_s, xK_p), spawn dmenuCommon)
-  , ((m, xK_p), spawn dmenuRun)
+  , ((m_s, xK_r), spawn dmenuCommon)
+  , ((m, xK_r), spawn dmenuRun)
     -- Window Control
   , ((m, xK_m), windows W.focusMaster)
   , ((m, xK_j), windows W.focusDown)
