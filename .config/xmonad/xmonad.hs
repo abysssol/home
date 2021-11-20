@@ -1,4 +1,3 @@
-import System.Exit (exitSuccess)
 import XMonad
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.EwmhDesktops
@@ -6,15 +5,15 @@ import XMonad.Actions.WithAll (killAll, sinkAll)
 import XMonad.Config.Desktop
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
-import XMonad.Layout.Magnifier
+import XMonad.Layout.ThreeColumns (ThreeCol(ThreeColMid))
 import XMonad.Layout.GridVariants (Grid(Grid))
-import XMonad.Layout.MultiToggle (single, mkToggle)
-import XMonad.Layout.MultiToggle.Instances (StdTransformers(NBFULL))
-import XMonad.Layout.NoBorders (smartBorders)
+import XMonad.Layout.ToggleLayouts (toggleLayouts, ToggleLayout(ToggleLayout))
+import XMonad.Layout.Magnifier (magnifierOff, magnifiercz)
+import XMonad.Layout.NoBorders (smartBorders, noBorders)
 import XMonad.Layout.PerWorkspace (onWorkspace)
-import XMonad.Layout.Renamed
-import XMonad.Layout.ResizableTile
+import XMonad.Layout.Renamed (renamed, Rename(Replace))
 
+import System.Exit (exitSuccess)
 import System.Taffybar.Support.PagerHints (pagerHints)
 
 import qualified XMonad.Layout.Magnifier as Magnifier
@@ -73,22 +72,31 @@ myManageHook = custom <+> manageHook desktopConfig
       , isDialog --> doFloat
       ]
 
-myLayoutHook = onWorkspace "bg" grid $ tall ||| grid
+myLayoutHook =
+  avoidStruts $
+  toggleLayouts
+    full $
+    onWorkspace "bg" grid $ tall ||| center ||| grid
   where
     tall =
       renamed [Replace "tall"] $
-      mkToggle (single NBFULL) $
-      avoidStruts $
       smartBorders $
       magnifierOff $
-      ResizableTall 1 (1 / 12) (1 / 2) []
+      Tall 1 (1 / 12) (1 / 2)
+    center =
+      renamed [Replace "center"] $
+      smartBorders $
+      magnifierOff $
+      ThreeColMid 1 (1 / 12) (1 / 2)
     grid =
       renamed [Replace "grid"] $
-      mkToggle (single NBFULL) $
-      avoidStruts $
       smartBorders $
       magnifiercz (5 / 3) $
       Grid (3 / 2)
+    full =
+      renamed [Replace "full"] $
+      noBorders $
+      Full
 
 myKeys :: XConfig Layout -> M.Map (KeyMask, KeySym) (X ())
 myKeys conf@(XConfig {XMonad.modMask = modMask}) =
@@ -113,11 +121,13 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) =
   , ((m_c_s, xK_c), killAll)
     -- Layout Control
   , ((m, xK_Tab), sendMessage NextLayout)
-  , ((m, xK_space), sendMessage $ MT.Toggle NBFULL)
+  , ((m, xK_space), sendMessage ToggleLayout >> sendMessage ToggleStruts)
   , ((m_c, xK_space), sendMessage ToggleStruts)
-  , ((m_s, xK_space), sendMessage $ Toggle)
+  , ((m_s, xK_space), sendMessage Magnifier.Toggle)
   , ((m_s, xK_h), sendMessage Shrink)
   , ((m_s, xK_l), sendMessage Expand)
+  , ((m_c_s, xK_h), sendMessage $ IncMasterN 1)
+  , ((m_c_s, xK_l), sendMessage $ IncMasterN (-1))
   , ((m, xK_f), withFocused float)
   , ((m_s, xK_f), withFocused $ windows . W.sink)
   , ((m_c_s, xK_f), sinkAll)
