@@ -9,6 +9,7 @@ hook global WinSetOption filetype=(rust|c|cpp) %{
     lsp-enable-window
 }
 
+map global insert <c-o> %{<a-;>o!<esc><backspace>}
 map global user l %{: enter-user-mode lsp<ret>} -docstring "LSP mode"
 map global user n %{i[`<esc>a`]<esc>2<s-h>} -docstring "Create rust doc link"
 map global user ` %{i`<esc>a`<esc><s-h>} -docstring "Surround with backticks"
