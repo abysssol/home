@@ -104,7 +104,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) =
   [ ((m, xK_n), refresh)
   , ((m_s, xK_q), io exitSuccess)
     -- Common Programs
-  , ((m, xK_Return), spawn $ XMonad.terminal conf)
+  , ((m, xK_t), spawn $ XMonad.terminal conf)
   , ((m_s, xK_z), spawn screenLocker)
   , ((m, xK_b), spawn browser)
   , ((m, xK_q), spawn dmenuSystem)

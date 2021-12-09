@@ -1,6 +1,6 @@
 [menu]
-music = "vlc ~/music"
-steam = "steam"
+music = { run = "vlc ~/music", group = 1 }
+steam = { run = "steam", group = 1 }
 minecraft = "multimc"
 
 [config.dmenu]
