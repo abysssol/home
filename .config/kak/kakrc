@@ -1,21 +1,39 @@
 colorscheme solarized-dark-termcolors
+source %sh{echo $HOME/.config/kak/syntax.kak}
+
 add-highlighter global/ number-lines -hlcursor
-add-highlighter global/ column 72 default,black
-add-highlighter global/ column 100 black,red+rb
-add-highlighter global/ regex \b(TODO|FIXME|NOTE)\b 0:default+rb
+add-highlighter global/ column 72 default,black+g
+add-highlighter global/ column 101 red,black+bF
+add-highlighter global/ regex \b(TODO|FIXME|NOTE)\b 0:red,black+bF
 
 eval %sh{kak-lsp --kakoune -s $kak_session}
-hook global WinSetOption filetype=(rust|c|cpp) %{
-    lsp-enable-window
+hook global WinSetOption filetype=rust %{
+  add-highlighter global/ regex \btodo! 0:red,black+bF
+  map buffer insert <tab> %{<space><space><space><space>}
+  set buffer formatcmd 'rustfmt --edition=2021'
+  set buffer tabstop 4
+  set buffer indentwidth 4
+
+  lsp-enable-window
+
+  hook window -group semantic-tokens BufReload .* lsp-semantic-tokens
+  hook window -group semantic-tokens NormalIdle .* lsp-semantic-tokens
+  hook window -group semantic-tokens InsertIdle .* lsp-semantic-tokens
+  hook -once -always window WinSetOption filetype=.* %{
+    remove-hooks window semantic-tokens
+  }
 }
 
 map global insert <c-o> %{<a-;>o!<esc><backspace>}
+map global normal <c-h> %{: lsp-hover<ret>} -docstring "Show hover info"
+map global user f %{: format<ret>} -docstring "Format buffer"
 map global user l %{: enter-user-mode lsp<ret>} -docstring "LSP mode"
+
 map global user n %{i[`<esc>a`]<esc>2<s-h>} -docstring "Create rust doc link"
 map global user ` %{i`<esc>a`<esc><s-h>} -docstring "Surround with backticks"
-map global user \' %{i'<esc>a'<esc><s-h>} -docstring "Surround with ticks"
+map global user \' %{i'<esc>a'<esc><s-h>} -docstring "Surround with single quotes"
 map global user \" %{i"<esc>a"<esc><s-h>} -docstring "Surround with quotes"
-map global user ( %{i(<esc>a)<esc><s-h>} -docstring "Surround with parens"
+map global user ( %{i(<esc>a)<esc><s-h>} -docstring "Surround with parentheses"
 map global user { %{i{<esc>a}<esc><s-h>} -docstring "Surround with braces"
 map global user [ %{i[<esc>a]<esc><s-h>} -docstring "Surround with brackets"
 map global user < %{i<lt><esc>a<gt><esc><s-h>} -docstring "Surround with angle brackets"
