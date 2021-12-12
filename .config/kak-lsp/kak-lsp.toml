@@ -54,6 +54,11 @@ face = "function"
 
 [[semantic_tokens]]
 token = "namespace"
+face = "keyword"
+modifiers = ["crateRoot"]
+
+[[semantic_tokens]]
+token = "namespace"
 face = "module"
 
 [[semantic_tokens]]
@@ -169,6 +174,10 @@ token = "attribute"
 face = "meta"
 
 [[semantic_tokens]]
+token = "builtinAttribute"
+face = "meta"
+
+[[semantic_tokens]]
 token = "builtinType"
 face = "builtin"
 
@@ -253,12 +262,16 @@ face = "variable"
 # constant:: Emitted for consts.
 # consuming:: Emitted for locals that are being consumed when use in a function call.
 # controlFlow:: Emitted for control-flow related tokens, this includes the `?` operator.
+# crateRoot:: Emitted for crate names, like `serde` and `crate`.
 # declaration:: Emitted for names of definitions, like `foo` in `fn foo() {}`.
+# defaultLibrary:: Emitted for items from built-in crates (std, core, alloc, test and proc_macro).
 # documentation:: Emitted for documentation comments.
 # injected:: Emitted for doc-string injected highlighting like rust source blocks in documentation.
 # intraDocLink:: Emitted for intra doc links in doc-strings.
 # library:: Emitted for items that are defined outside of the current crate.
-# mutable:: Emitted for mutable locals and statics.
+# mutable:: Emitted for mutable locals and statics as well as functions taking `&mut self`.
+# public:: Emitted for items that are from the current crate and are `pub`.
+# reference:: Emitted for locals behind a reference and functions taking `self` by reference.
 # static:: Emitted for "static" functions, also known as functions that do not take a `self` param, as well as statics and consts.
 # trait:: Emitted for associated trait items.
 # unsafe:: Emitted for unsafe operations, like unsafe function calls, as well as the `unsafe` token.
