@@ -44,7 +44,7 @@ myConfig = docks $ ewmh $ pagerHints
     }
 
 browser = "firefox"
-screenLocker = "i3lock -ei /usr/share/backgrounds/abyss-locked.png"
+screenLocker = "i3lock -ei ~/images/abyss-locked.png"
 dmenuSystem = "dmenu-manager ~/.config/xmonad/system.toml"
 dmenuCommon = "dmenu-manager ~/.config/xmonad/common.toml"
 dmenuRun =
