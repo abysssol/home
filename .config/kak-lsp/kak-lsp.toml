@@ -67,7 +67,7 @@ face = "type"
 
 [[semantic_tokens]]
 token = "trait"
-face = "union"
+face = "attribute"
 
 [[semantic_tokens]]
 token = "typeAlias"
