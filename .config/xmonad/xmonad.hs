@@ -44,7 +44,7 @@ myConfig = docks $ ewmh $ pagerHints
     }
 
 browser = "firefox"
-screenLocker = "i3lock -ei ~/images/abyss-locked.png"
+screenLocker = "slock"
 dmenuSystem = "dmenu-manager ~/.config/xmonad/system.toml"
 dmenuCommon = "dmenu-manager ~/.config/xmonad/common.toml"
 dmenuRun =
@@ -55,8 +55,8 @@ dmenuRun =
   "-sb '" ++ blue ++ "' " ++
   "-sf '" ++ base03 ++ "'"
 
-wsKeys = [xK_grave] ++ [xK_1 .. xK_9]
-myWorkspaces = ["bg", "web", "dev", "doc", "sys", "steam", "6", "7", "8", "9"]
+wsKeys = [xK_grave] ++ [xK_1 .. xK_9] ++ [xK_0]
+myWorkspaces = ["bg", "web", "dev", "doc", "sys", "steam", "6", "7", "8", "9", "0"]
 wsHidden = ["bg"]
 
 myStartupHook = do
@@ -118,7 +118,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) =
   , ((m_s, xK_j), windows W.swapDown)
   , ((m_s, xK_k), windows W.swapUp)
   , ((m_s, xK_c), kill)
-  , ((m_c_s, xK_c), killAll)
+  , ((m_c, xK_c), killAll)
     -- Layout Control
   , ((m, xK_Tab), sendMessage NextLayout)
   , ((m, xK_space), sendMessage ToggleLayout >> sendMessage ToggleStruts)
@@ -126,11 +126,11 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) =
   , ((m_s, xK_space), sendMessage Magnifier.Toggle)
   , ((m_s, xK_h), sendMessage Shrink)
   , ((m_s, xK_l), sendMessage Expand)
-  , ((m_c_s, xK_h), sendMessage $ IncMasterN 1)
-  , ((m_c_s, xK_l), sendMessage $ IncMasterN (-1))
+  , ((m_c, xK_h), sendMessage $ IncMasterN 1)
+  , ((m_c, xK_l), sendMessage $ IncMasterN (-1))
   , ((m, xK_f), withFocused float)
   , ((m_s, xK_f), withFocused $ windows . W.sink)
-  , ((m_c_s, xK_f), sinkAll)
+  , ((m_c, xK_f), sinkAll)
   ] ++
     -- Workspaces
   [ ((m .|. msk, k), windows $ f i)
