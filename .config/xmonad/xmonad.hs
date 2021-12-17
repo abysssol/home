@@ -61,6 +61,7 @@ wsHidden = ["bg"]
 
 myStartupHook = do
   windows $ W.greedyView "web"
+  spawn "xsetroot -cursor_name left_ptr"
   spawn "~/.fehbg"
   spawn "pkill taffybar; taffybar"
 
