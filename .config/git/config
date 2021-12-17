@@ -1,8 +1,5 @@
 [user]
 	name = Abyss
 	email = abyssability@pm.me
-[init]
-	defaultBranch = master
 [core]
 	editor = kak
-	askPass = 
