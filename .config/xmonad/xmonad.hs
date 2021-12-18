@@ -65,7 +65,6 @@ myStartupHook = do
   spawn "xsetroot -cursor_name left_ptr"
   spawn "~/.fehbg"
   spawn "pkill taffybar; taffybar"
-  spawn "emacs --daemon"
 
 myManageHook = custom <+> manageHook desktopConfig
   where
