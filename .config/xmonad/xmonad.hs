@@ -43,6 +43,7 @@ myConfig = docks $ ewmh $ pagerHints
     , handleEventHook = handleEventHook def <+> fullscreenEventHook
     }
 
+emacs = "emacsclient -c -a ''"
 browser = "firefox"
 screenLocker = "slock"
 dmenuSystem = "dmenu-manager ~/.config/xmonad/system.toml"
@@ -64,6 +65,7 @@ myStartupHook = do
   spawn "xsetroot -cursor_name left_ptr"
   spawn "~/.fehbg"
   spawn "pkill taffybar; taffybar"
+  spawn "emacs --daemon"
 
 myManageHook = custom <+> manageHook desktopConfig
   where
@@ -107,6 +109,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) =
     -- Common Programs
   , ((m, xK_t), spawn $ XMonad.terminal conf)
   , ((m_s, xK_z), spawn screenLocker)
+  , ((m, xK_e), spawn emacs)
   , ((m, xK_b), spawn browser)
   , ((m, xK_q), spawn dmenuSystem)
   , ((m_s, xK_r), spawn dmenuCommon)
