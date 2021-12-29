@@ -1,5 +1,5 @@
 [menu]
-music = { run = "vlc ~/music", group = 1 }
+music = { run = "alacritty -e mpv --shuffle --loop-playlist ~/music", group = 1 }
 steam = { run = "steam", group = 1 }
 minecraft = "multimc"
 
