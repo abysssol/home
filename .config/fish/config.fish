@@ -3,9 +3,6 @@ alias ll "ls -lF"
 alias la "ll -a"
 alias cl "clear"
 
-alias git-config "git --git-dir=$HOME/.home.git --work-tree=$HOME"
-alias sudo-git-config "sudo git --git-dir=/.system.git --work-tree=/"
-
 alias clippy-all "cargo clippy -- -D clippy::all -W clippy::pedantic -W clippy::nursery"
 
 function term
@@ -14,6 +11,10 @@ end
 
 if test -d $HOME/.cargo/bin/
     set -xp PATH "$HOME/.cargo/bin"
+end
+
+if test -d $HOME/.emacs.d/bin/
+    set -xp PATH "$HOME/.emacs.d/bin/"
 end
 
 alias fish_greeting "neofetch"
