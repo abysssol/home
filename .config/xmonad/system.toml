@@ -4,7 +4,8 @@ entries = [
 ]
 
 [menu]
-"restart xmonad" = "xmonad --recompile; xmonad --restart"
+suspend = "slock & systemctl suspend"
+"restart xmonad" = { run = "xmonad --recompile; xmonad --restart", group = -1 }
 
 [config.dmenu]
 prompt = "system:"
