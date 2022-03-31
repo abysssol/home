@@ -56,8 +56,5 @@
 (setq-default delete-by-moving-to-trash t
               x-stretch-cursor t)
 
-(setq undo-limit 80000000 ; 80Mb
-      evil-want-fine-undo t ; insert mode
+(setq undo-limit 80000000 ;; 80Mb
       scroll-margin 2)
-
-(global-subword-mode 1)
