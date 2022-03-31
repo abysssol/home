@@ -57,7 +57,7 @@ dmenuRun =
   "-sf '" ++ base03 ++ "'"
 
 wsKeys = [xK_grave] ++ [xK_1 .. xK_9] ++ [xK_0]
-myWorkspaces = ["bg", "web", "dev", "doc", "sys", "steam", "6", "7", "8", "9", "0"]
+myWorkspaces = ["bg", "web", "dev", "doc", "steam", "5", "6", "7", "8", "9", "0"]
 wsHidden = ["bg"]
 
 myStartupHook = do
