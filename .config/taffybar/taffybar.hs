@@ -20,7 +20,7 @@ myConfig = toTaffyConfig defaultSimpleTaffyConfig
     tray = sniTrayThatStartsWatcherEvenThoughThisIsABadWayToDoIt
 
 memory = textMemoryMonitorNew "ram: $used$" 1
-disk = fsMonitorNew 1 [ "/", "/overflow" ]
+disk = fsMonitorNew 1 [ "/", "/ext" ]
 
 date = textClockNewWith defaultClockConfig
   { clockFormatString = "%F, %a"
