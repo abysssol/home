@@ -84,7 +84,7 @@ myLayoutHook =
     avoidStruts
         $   smartBorders
         $   toggleLayouts full
-        $   onWorkspace "bg" grid
+        $   onWorkspace "0" grid
         $   tall
         ||| center
         ||| grid
