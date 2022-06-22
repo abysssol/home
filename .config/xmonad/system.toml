@@ -8,8 +8,8 @@ suspend = "slock & systemctl suspend"
 
 [config.dmenu]
 prompt = "system:"
-font = "Hack Nerd Font:size=16"
-background = "#002b36"
-foreground = "#839496"
-selected-background = "#268bd2"
-selected-foreground = "#002b36"
+font = "Hack Nerd Font:size=18"
+background = "#101010"
+foreground = "#f0f0f0"
+selected-background = "#00c0ff"
+selected-foreground = "#000000"

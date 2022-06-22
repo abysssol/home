@@ -14,7 +14,7 @@ myConfig = toTaffyConfig defaultSimpleTaffyConfig
     , centerWidgets = [title]
     , endWidgets    = [time, date, cpu, memory, disk]
     , widgetSpacing = 18
-    , barHeight     = 36
+    , barHeight     = 42
     }
     where tray = sniTrayThatStartsWatcherEvenThoughThisIsABadWayToDoIt
 
@@ -40,9 +40,9 @@ title = windowsNew WindowsConfig { getMenuLabel   = truncatedGetMenuLabel 100
 
 workspaces = workspacesNew defaultWorkspacesConfig
     { showWorkspaceFn = (\x -> case (workspaceName x, workspaceState x) of
-                            (_   , Empty ) -> False
+                            (_  , Empty ) -> False
                             ("0", Hidden) -> False
-                            otherwise      -> True
+                            otherwise     -> True
                         )
     }
 

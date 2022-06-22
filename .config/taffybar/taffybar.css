@@ -1,149 +1,166 @@
-/* Solarized Colors */
-@define-color red #dc322f;
-@define-color orange #cb4b16;
-@define-color yellow #b58900;
-@define-color green #859900;
-@define-color cyan #2aa198;
-@define-color blue #268bd2;
-@define-color violet #6c71c4;
-@define-color magenta #d33682;
+/* purity theme */
+@define-color black @base0;
+@define-color red #ff0060;
+@define-color green #60ff00;
+@define-color yellow #ffc000;
+@define-color blue #0060ff;
+@define-color magenta #c000ff;
+@define-color cyan #00ffc0;
+@define-color white @base6;
 
-@define-color base03 #002b36;
-@define-color base02 #073642;
-@define-color base01 #586e75;
-@define-color base00 #657b83;
-@define-color base0 #839496;
-@define-color base1 #93a1a1;
-@define-color base2 #eee8d5;
-@define-color base3 #fdf6e3;
+@define-color bright-black @base2;
+@define-color bright-red #ff6000;
+@define-color bright-green #00ff60;
+@define-color bright-yellow #c0ff00;
+@define-color bright-blue #6000ff;
+@define-color bright-magenta #ff00c0;
+@define-color bright-cyan #00c0ff;
+@define-color bright-white @base8;
 
-/* Other Colors*/
+@define-color base0 #000000;
+@define-color base1 #101010;
+@define-color base2 #202020;
+@define-color base3 #404040;
+@define-color base4 #808080;
+@define-color base5 #c0c0c0;
+@define-color base6 #e0e0e0;
+@define-color base7 #f0f0f0;
+@define-color base8 #ffffff;
+
+@define-color bg @base1;
+@define-color fg @base7;
+@define-color grey @base4;
+
+/* other colors */
 @define-color transparent rgba(0.0, 0.0, 0.0, 0.0);
-@define-color black @base02;
-@define-color white @base2;
-@define-color lighten rgba(255, 255, 255, 0.1);
 
-/* Top level styling */
+/* top level styling */
 
 .taffy-window * {
-	all: unset;
+  all: unset;
 
-	font-family: "Noto Sans", sans-serif;
-	font-weight: bold;
-	font-size: 11pt;
-	color: @base1;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bold;
+  font-size: 12pt;
+  color: @fg;
 }
 
 .taffy-box {
-	background-color: @base03;
-	padding-top: 2px;
-	padding-bottom: 2px;
-	padding-left: 12px;
-	padding-right: 12px;
+  background-color: @bg;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 .inner-pad {
-	padding-top: 2px;
-	padding-bottom: 2px;
-	padding-left: 4px;
-	padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 .contents {
-	padding-top: 2px;
-	padding-bottom: 2px;
-	padding-left: 4px;
-	padding-right: 4px;
-	transition: background-color .3s;
-	border-radius: 8px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 4px;
+  padding-right: 8px;
+  transition: background-color 0.3s;
+  border-radius: 12px;
 }
 
 /* Workspaces styling */
 
 .workspace-label {
-	padding-left: 4px;
-	padding-right: 4px;
-	font-size: 12pt;
-}
-
-.active {
-	color: @white;
-}
-
-.active .contents {
-	background-color: @lighten;
-}
-
-.visible .contents {
-	background-color: @black;
+  padding-left: 4px;
+  padding-right: 4px;
+  font-size: 12pt;
 }
 
 .hidden {
-	color: @base00;
+  color: @fg;
+}
+
+.active {
+  color: @bright-cyan;
+}
+
+.active .contents {
+  background-color: @base3;
+}
+
+.visible .contents {
+  background-color: @bg;
 }
 
 .window-icon-container {
-	transition: opacity .2s, box-shadow .3s;
-	opacity: 1;
+  transition: opacity 0.2s, box-shadow 0.2s;
+  opacity: 1;
 }
 
 /* This gives space for the box-shadow (they look like underlines) that follow.
    This will actually affect all widgets, (not just the workspace icons), but
    that is what we want since we want the icons to look the same. */
-.auto-size-image, .sni-tray {
-	padding: 1px;
+.auto-size-image,
+.sni-tray {
+  padding: 2px;
 }
 
 .window-icon-container.active {
-	box-shadow: inset 0 -2px @base1;
+  box-shadow: inset 0 -2px @bright-cyan;
 }
 
 .window-icon-container.urgent {
-	box-shadow: inset 0 -3px @cyan;
+  box-shadow: inset 0 -3px @yellow;
 }
 
 .window-icon-container.inactive .window-icon {
-	padding: 0px;
+  padding: 0px;
 }
 
 .window-icon-container.minimized .window-icon {
-	opacity: .3;
+  opacity: 0.5;
 }
 
 .window-icon {
-	opacity: 1;
-	transition: opacity .5s;
+  opacity: 1;
+  transition: opacity 0.5s;
 }
 
 /* Button styling */
 
 button {
-	background-color: @transparent;
-	border-width: 0px;
-	border-radius: 0px;
+  background-color: @transparent;
+  border-width: 0px;
+  border-radius: 0px;
 }
 
-button:checked, button:hover .Contents:hover {
-	box-shadow: inset 0 -2px @blue;
+button:checked,
+button:hover .Contents:hover {
+  box-shadow: inset 0 -2px @cyan;
 }
 
 /* Menu styling */
 
 /* The ".taffy-window" prefixed selectors are needed because if they aren't present,
    the top level .Taffybar selector takes precedence */
-.taffy-window menuitem *,  menuitem * {
-	color: @base1;
+.taffy-window menuitem *,
+menuitem * {
+  color: @fg;
 }
 
-.taffy-window menuitem, menuitem {
-	background-color: @black;
+.taffy-window menuitem,
+menuitem {
+  background-color: @bg;
 }
 
-.taffy-window menuitem:hover, menuitem:hover {
-	color: @white;
-	background-color: @blue;
+.taffy-window menuitem:hover,
+menuitem:hover {
+  color: @black;
+  background-color: @bright-cyan;
 }
 
-.taffy-window menuitem:hover > label, menuitem:hover > label {
-	color: @white;
+.taffy-window menuitem:hover > label,
+menuitem:hover > label {
+  color: @black;
 }
