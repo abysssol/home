@@ -1,8 +1,10 @@
 alias ls "exa --group-directories-first"
 alias ll "ls -lF"
 alias la "ll -a"
+
 alias cl "clear"
 alias em "emacsclient -c -a ''"
+alias tem "emacsclient -t -a ''"
 alias clippy-all "cargo clippy -- -D clippy::all -W clippy::pedantic -W clippy::nursery"
 
 
@@ -24,5 +26,5 @@ if test -d $HOME/.emacs.d/bin/
 end
 
 
-alias fish_greeting "neofetch"
+set -U fish_greeting
 starship init fish | source
