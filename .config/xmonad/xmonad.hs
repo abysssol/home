@@ -52,8 +52,8 @@ browser = "firefox"
 screenLocker = "slock"
 dmenu script = concat ["dmenu-manager ~/.config/xmonad/", script, ".toml"]
 dmenuRun = concat
-  [ "dmenu_run -i -p 'run:' "
-  , "-fn 'Hack Nerd Font:size=18' "
+  [ "dmenu_run -b -i -p 'run:' "
+  , "-fn 'Hack Nerd Font:size=12' "
   , "-nb '"
   , bg -- normal background
   , "' -nf '"

@@ -4,7 +4,8 @@ steam = { run = "steam", group = 1 }
 
 [config.dmenu]
 prompt = "common:"
-font = "Hack Nerd Font:size=18"
+font = "Hack Nerd Font:size=12"
+bottom = true
 background = "#101010"
 foreground = "#f0f0f0"
 selected-background = "#00c0ff"
