@@ -50,7 +50,7 @@ myConfig = desktopConfig { terminal           = "alacritty"
 editor = "emacsclient -c -a ''"
 browser = "firefox"
 screenLocker = "slock"
-dmenu script = concat ["dmenu-manager ~/.config/xmonad/", script, ".toml"]
+dmenu script = concat ["dmm ~/.config/xmonad/", script, ".toml"]
 dmenuRun = concat
   [ "dmenu_run -i -p 'run:' "
   , "-fn 'Hack Nerd Font:size=12' "
