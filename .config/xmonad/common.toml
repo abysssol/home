@@ -1,5 +1,5 @@
 [menu]
-music = { run = "alacritty -e mpv --shuffle --loop-playlist ~/Music", group = 1 }
+music = { run = "alacritty -e mpv --shuffle --loop-playlist ~/Music/music", group = 1 }
 steam = { run = "steam", group = 1 }
 
 [config.dmenu]
