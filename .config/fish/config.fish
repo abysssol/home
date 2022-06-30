@@ -5,6 +5,7 @@ alias la "ll -a"
 alias cl "clear"
 alias em "emacsclient -c -a ''"
 alias tem "emacsclient -t -a ''"
+alias nix-shell "nix-shell --run fish"
 alias clippy-all "cargo clippy -- -D clippy::all -W clippy::pedantic -W clippy::nursery"
 
 
