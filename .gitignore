@@ -1,4 +1,4 @@
 /*
-!/.gitignore
 !/.config
-!/.cargo/config.toml
+!/.gitignore
+!/.local/share/cargo/config.toml
