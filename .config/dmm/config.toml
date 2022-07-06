@@ -1,0 +1,9 @@
+[config]
+shell = [ "fish", "-c" ]
+
+[config.dmenu]
+font = "Hack Nerd Font:size=14"
+background = "#101010"
+foreground = "#f0f0f0"
+selected-background = "#00c0ff"
+selected-foreground = "#000000"

@@ -1,0 +1,6 @@
+[config]
+shell = false
+path = true
+
+[config.dmenu]
+prompt = "run:"

@@ -51,19 +51,6 @@ editor = "emacsclient -c -a ''"
 browser = "firefox"
 screenLocker = "slock"
 dmenu script = concat ["dmm ~/.config/xmonad/", script, ".toml"]
-dmenuRun = concat
-  [ "dmenu_run -i -p 'run:' "
-  , "-fn 'Hack Nerd Font:size=12' "
-  , "-nb '"
-  , bg -- normal background
-  , "' -nf '"
-  , fg -- normal foreground
-  , "' -sb '"
-  , brightCyan -- selected background
-  , "' -sf '"
-  , black -- selected foreground
-  , "'"
-  ]
 
 wsKeys = [xK_1 .. xK_9] ++ [xK_grave]
 myWorkspaces = ["web", "dev", "doc", "steam", "5", "6", "7", "8", "9", "0"]
@@ -109,7 +96,7 @@ myKeys conf@(XConfig { XMonad.modMask = modMask }) =
        , ((m, xK_b)      , spawn browser)
        , ((m, xK_q)      , spawn $ dmenu "system")
        , ((m_s, xK_r)    , spawn $ dmenu "common")
-       , ((m, xK_r)      , spawn dmenuRun)
+       , ((m, xK_r)      , spawn $ dmenu "run")
            -- Window Control
        , ((m, xK_m)      , windows W.focusMaster)
        , ((m, xK_j)      , windows W.focusDown)
