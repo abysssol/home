@@ -1,0 +1,40 @@
+! cursor
+Xcursor.theme: phinger-cursors
+Xcursor.size: 32
+
+! special
+*.foreground:   #f0f0f0
+*.background:   #101010
+*.cursorColor:  #f0f0f0
+
+! black
+*.color0:       #000000
+*.color8:       #202020
+
+! red
+*.color1:       #ff0060
+*.color9:       #ff6000
+
+! green
+*.color2:       #60ff00
+*.color10:      #00ff60
+
+! yellow
+*.color3:       #ffc000
+*.color11:      #c0ff00
+
+! blue
+*.color4:       #0060ff
+*.color12:      #6000ff
+
+! magenta
+*.color5:       #c000ff
+*.color13:      #ff00c0
+
+! cyan
+*.color6:       #00ffc0
+*.color14:      #00c0ff
+
+! white
+*.color7:       #e0e0e0
+*.color15:      #ffffff
