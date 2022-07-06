@@ -2,4 +2,4 @@
 	name = Abysss
 	email = abysssol@pm.me
 [core]
-	editor = emacsclient -t -a ''
+	editor = nvim
