@@ -57,7 +57,7 @@ myWorkspaces = ["web", "dev", "doc", "steam", "5", "6", "7", "8", "9", "0"]
 
 myStartupHook = do
   spawn "xsetroot -cursor_name left_ptr"
-  spawn "~/.fehbg"
+  spawn "feh --no-fehbg --bg-max ~/.config/xmonad/background"
   spawn "pkill taffybar; taffybar"
 
 myManageHook = custom <+> manageHook desktopConfig
@@ -139,7 +139,7 @@ myKeys conf@(XConfig { XMonad.modMask = modMask }) =
       else (W.float w (W.RationalRect (1 / 6) (1 / 6) (2 / 3) (2 / 3)) s)
     )
 
--- Solarized Colors
+-- Purity Colors
 black = base0
 red = "#ff0060"
 green = "#60ff00"
