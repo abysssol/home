@@ -139,21 +139,21 @@ myKeys conf@(XConfig { XMonad.modMask = modMask }) =
       else (W.float w (W.RationalRect (1 / 6) (1 / 6) (2 / 3) (2 / 3)) s)
     )
 
--- Purity Colors
+-- purity colors
 black = base0
-red = "#ff0060"
-green = "#60ff00"
+red = "#ff0040"
+green = "#40ff00"
 yellow = "#ffc000"
-blue = "#0060ff"
+blue = "#0040ff"
 magenta = "#c000ff"
 cyan = "#00ffc0"
 white = base6
 
 brightBlack = base2
-brightRed = "#ff6000"
-brightGreen = "#00ff60"
+brightRed = "#ff4000"
+brightGreen = "#00ff40"
 brightYellow = "#c0ff00"
-brightBlue = "#6000ff"
+brightBlue = "#4000ff"
 brightMagenta = "#ff00c0"
 brightCyan = "#00c0ff"
 brightWhite = base8

@@ -1,18 +1,18 @@
 /* purity theme */
 @define-color black @base0;
-@define-color red #ff0060;
-@define-color green #60ff00;
+@define-color red #ff0040;
+@define-color green #40ff00;
 @define-color yellow #ffc000;
-@define-color blue #0060ff;
+@define-color blue #0040ff;
 @define-color magenta #c000ff;
 @define-color cyan #00ffc0;
 @define-color white @base6;
 
 @define-color bright-black @base2;
-@define-color bright-red #ff6000;
-@define-color bright-green #00ff60;
+@define-color bright-red #ff4000;
+@define-color bright-green #00ff40;
 @define-color bright-yellow #c0ff00;
-@define-color bright-blue #6000ff;
+@define-color bright-blue #4000ff;
 @define-color bright-magenta #ff00c0;
 @define-color bright-cyan #00c0ff;
 @define-color bright-white @base8;

@@ -127,32 +127,32 @@ colors:
 
   normal:
     black: "#000000"
-    red: "#ff0060"
-    green: "#60ff00"
+    red: "#ff0040"
+    green: "#40ff00"
     yellow: "#ffc000"
-    blue: "#0060ff"
+    blue: "#0040ff"
     magenta: "#c000ff"
-    cyan: "#00ffc0"
+    cyan: "#00c0ff"
     white: "#e0e0e0"
 
   bright:
     black: "#202020"
-    red: "#ff6000"
-    green: "#00ff60"
+    red: "#ff4000"
+    green: "#00ff40"
     yellow: "#c0ff00"
-    blue: "#6000ff"
+    blue: "#4000ff"
     magenta: "#ff00c0"
-    cyan: "#00c0ff"
+    cyan: "#00ffc0"
     white: "#ffffff"
 
   dim:
     black: "#000000"
-    red: "#c04040"
-    green: "#40c040"
-    yellow: "#c0c040"
-    blue: "#4040c0"
-    magenta: "#c040c0"
-    cyan: "#40c0c0"
+    red: "#c02020"
+    green: "#20c020"
+    yellow: "#c0c020"
+    blue: "#2020c0"
+    magenta: "#c020c0"
+    cyan: "#20c0c0"
     white: "#c0c0c0"
 
   # Allowed values are CellForeground and CellBackground, which reference the
