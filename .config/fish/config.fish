@@ -16,8 +16,8 @@ function term
     fork alacritty -e fish -c "$argv"
 end
 
-if test -d $HOME/.local/share/cargo/bin
-    set -xa PATH "$HOME/.local/share/cargo/bin"
+if test -d $HOME/.cargo/bin
+    set -xa PATH "$HOME/.cargo/bin"
 end
 
 if test -d $HOME/.emacs.d/bin
