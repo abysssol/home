@@ -1,3 +1,7 @@
+set -Ux VISUAL "emacsclient -c -a ''"
+set -Ux EDITOR "emacsclient -c -a ''"
+set -Ux MANPAGER "sh -c 'col -bx | bat -pl man'"
+
 alias nix-shell "nix-shell --run fish"
 alias clippy-all "cargo clippy -- -D clippy::all -W clippy::pedantic -W clippy::nursery"
 alias dl-music "yt-dlp --no-playlist --embed-metadata -x --audio-format flac"
