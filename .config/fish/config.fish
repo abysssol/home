@@ -1,6 +1,6 @@
-set -Ux VISUAL "emacsclient -c -a ''"
-set -Ux EDITOR "emacsclient -c -a ''"
-set -Ux MANPAGER "sh -c 'col -bx | bat -pl man'"
+set -gx EDITOR "nvim"
+set -gx VISUAL "emacsclient -c -a ''"
+set -gx MANPAGER "sh -c 'col -bx | bat -pl man'"
 
 alias nix-shell "nix-shell --run fish"
 alias clippy-all "cargo clippy -- -D clippy::all -W clippy::pedantic -W clippy::nursery"
@@ -20,13 +20,14 @@ function term
     fork alacritty -e fish -c "$argv"
 end
 
-if test -d $HOME/.cargo/bin
-    set -xa PATH "$HOME/.cargo/bin"
+if test -d $HOME/.emacs.d/bin
+    set -gxp PATH "$HOME/.emacs.d/bin/"
 end
 
-if test -d $HOME/.emacs.d/bin
-    set -xa PATH "$HOME/.emacs.d/bin/"
+if test -d $HOME/.cargo/bin
+    set -gxp PATH "$HOME/.cargo/bin"
 end
 
 set -U fish_greeting
 starship init fish | source
+zoxide init fish | source
