@@ -13,12 +13,12 @@
 #TERM: alacritty
 
 window:
-  padding:
-    x: 8
-    y: 8
+  #padding:
+  #  x: 0
+  #  y: 0
 
   # Spread additional padding evenly around the terminal content.
-  #dynamic_padding: false
+  dynamic_padding: true
 
   # Window dimensions (changes require restart)
   #
