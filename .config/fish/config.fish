@@ -1,4 +1,4 @@
-set -gx EDITOR "nvim"
+set -gx EDITOR "hx"
 set -gx VISUAL "emacsclient -c -a ''"
 set -gx MANPAGER "sh -c 'col -bx | bat -pl man'"
 
