@@ -16,6 +16,11 @@ function fork
     disown
 end
 
+function into
+    fork $argv
+    exit
+end
+
 function term
     fork alacritty -e fish -c "$argv"
 end
