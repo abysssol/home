@@ -1,0 +1,7 @@
+theme = "purity"
+
+[editor]
+line-number = "relative"
+cursorline = true
+rulers = [ 100 ]
+indent-guides.render = true
