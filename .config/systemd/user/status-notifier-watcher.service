@@ -1,0 +1,10 @@
+[Unit]
+Description=Taffybar tray watcher
+
+[Service]
+Type=dbus
+BusName=org.kde.StatusNotifierWatcher
+ExecStart=/run/current-system/sw/bin/status-notifier-watcher
+
+[Install]
+WantedBy=default.target

@@ -1,60 +1,45 @@
 import           Data.Text
 import           System.Taffybar
-import           System.Taffybar.Information.CPU
 import           System.Taffybar.SimpleConfig
 import           System.Taffybar.Widget
 import           System.Taffybar.Widget.Generic.Graph
-import           System.Taffybar.Widget.Generic.PollingGraph
 import           System.Taffybar.Widget.Workspaces
 
-main = startTaffybar myConfig
+main = startTaffybar $ toTaffyConfig defaultSimpleTaffyConfig
+  { startWidgets  = [layout, workspaces]
+  , centerWidgets = [tray]
+  , endWidgets    = [dateTime, cpu, memory, disk]
+  , widgetSpacing = 30
+  , barHeight     = 30
+  }
 
-myConfig = toTaffyConfig defaultSimpleTaffyConfig
-    { startWidgets  = [tray, layout, workspaces]
-    , centerWidgets = [title]
-    , endWidgets    = [time, date, cpu, memory, disk]
-    , widgetSpacing = 18
-    , barHeight     = 42
-    }
-    where tray = sniTrayThatStartsWatcherEvenThoughThisIsABadWayToDoIt
-
+disk = fsMonitorNew 1 ["/"]
 memory = textMemoryMonitorNew "ram: $used$" 1
-disk = fsMonitorNew 1 ["/", "/ext"]
+tray = sniTrayNew
+layout = layoutNew defaultLayoutConfig
 
-date = textClockNewWith defaultClockConfig
-    { clockFormatString   = "%F, %a"
-    , clockUpdateStrategy = RoundedTargetInterval 10 0.0
-    }
-time = textClockNewWith defaultClockConfig
-    { clockFormatString   = "%T"
-    , clockUpdateStrategy = RoundedTargetInterval 1 0.0
-    }
-
-layout = layoutNew LayoutConfig
-    { formatLayout = (\x -> return $ pack $ "|| " ++ unpack x ++ " ||")
-    }
-
-title = windowsNew WindowsConfig { getMenuLabel   = truncatedGetMenuLabel 100
-                                 , getActiveLabel = truncatedGetActiveLabel 60
-                                 }
+dateTime = textClockNewWith defaultClockConfig
+  { clockFormatString   = "%a %b %F %T"
+  , clockUpdateStrategy = RoundedTargetInterval 1 0
+  }
 
 workspaces = workspacesNew defaultWorkspacesConfig
-    { showWorkspaceFn = (\x -> case (workspaceName x, workspaceState x) of
-                            (_  , Empty ) -> False
-                            ("0", Hidden) -> False
-                            otherwise     -> True
-                        )
-    }
+  { showWorkspaceFn =
+    (\ws -> workspaceVisible (workspaceName ws) (workspaceState ws))
+  }
 
-cpu = pollingGraphNew cpuCfg 0.5 cpuCallback
-  where
-    cpuCallback = do
-        (_, systemLoad, totalLoad) <- cpuLoad
-        return [totalLoad, systemLoad]
-    cpuCfg = defaultGraphConfig
-        { graphDataColors      = [(0, 1, 0, 1), (1, 0, 1, 0.5)]
-        , graphBackgroundColor = (0, 0, 0, 0)
-        , graphBorderWidth     = 0
-        , graphLabel           = Just $ pack "cpu: "
-        , graphDirection       = RIGHT_TO_LEFT
-        }
+workspaceVisible _   Empty  = False
+workspaceVisible "0" Hidden = False
+workspaceVisible _   _      = True
+
+cpu = cpuMonitorNew cpuCfg 0.2 "cpu"
+ where
+  cpuCfg = defaultGraphConfig
+    { graphDataColors      = [(1, 0.75, 0, 1), (0, 0.75, 1, 1)]
+    , graphLabel           = Just $ pack "cpu: "
+    , graphDirection       = RIGHT_TO_LEFT
+    , graphHistorySize     = 50
+    , graphWidth           = 100
+    , graphBackgroundColor = (0, 0, 0, 0)
+    , graphBorderWidth     = 0
+    }
