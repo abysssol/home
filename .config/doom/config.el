@@ -55,5 +55,5 @@
 
 (setq-default x-stretch-cursor t)
 
-(setq undo-limit 80000000 ;; 80Mb
+(setq undo-limit 100000000 ;; 100Mb
       scroll-margin 2)
