@@ -46,7 +46,7 @@ myConfig = desktopConfig { terminal           = "alacritty"
                          }
 
 editor = "emacsclient -c -a ''"
-browser = "firefox"
+browser = "librewolf"
 screenLocker = "slock"
 dmenu script = concat ["dmm ~/.config/xmonad/", script, ".toml"]
 wsKeys = [xK_1 .. xK_9] ++ [xK_grave]
