@@ -1,4 +1,4 @@
-linker = "clang"
-rustflags = [
-    "-C", "link-arg=-fuse-ld=lld",
+build.rustflags = [
+  "-C", "linker=clang",
+  "-C", "link-arg=-fuse-ld=lld"
 ]
