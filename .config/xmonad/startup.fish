@@ -3,7 +3,7 @@
 xsetroot -cursor_name left_ptr
 feh --no-fehbg --bg-max ~/Pictures/xmonad-bg
 pkill unclutter
-unclutter --timeout 3 --jitter 36 &
+unclutter --timeout 5 --jitter 16 &
 
 systemctl --user start status-watcher
 pkill taffybar
