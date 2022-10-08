@@ -1,5 +1,6 @@
 [Unit]
-Description=Taffybar tray watcher
+Description=Taffybar applet watcher
+Before=default.target
 
 [Service]
 Type=dbus
