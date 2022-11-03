@@ -1,7 +1,7 @@
 [menu]
 music = "alacritty -e mpv --shuffle --loop-playlist ~/Music/music/* ~/Music/nightcore/*"
 steam = true
-polymc = true
+prismlauncher = true
 
 [config.dmenu]
 prompt = "common:"
