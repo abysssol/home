@@ -79,7 +79,7 @@ myManageHook = custom <+> manageHook desktopConfig
 
 myLayoutHook =
   avoidStruts $
-    lessBorders OtherIndicated $
+    smartBorders $
       toggleLayouts full $
         onWorkspace "0" grid $
           tall
@@ -87,15 +87,9 @@ myLayoutHook =
             ||| grid
   where
     tall = renamed [Replace "layout: tall"] $ magnifierOff $ Tall 1 (1 / 12) (1 / 2)
-    center =
-      renamed [Replace "layout: center"] $
-        magnifierOff $
-          ThreeColMid
-            1
-            (1 / 12)
-            (1 / 2)
+    center = renamed [Replace "layout: center"] $ magnifierOff $ ThreeColMid 1 (1 / 12) (1 / 2)
     grid = renamed [Replace "layout: grid"] $ magnifiercz (5 / 3) $ Grid (3 / 2)
-    full = renamed [Replace "layout: full"] Full
+    full = renamed [Replace "layout: full"] $ lessBorders Screen Full
 
 myKeys :: XConfig Layout -> M.Map (KeyMask, KeySym) (X ())
 myKeys conf@(XConfig {XMonad.modMask = modMask}) =

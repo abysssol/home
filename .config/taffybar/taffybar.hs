@@ -29,12 +29,10 @@ main =
 
 showFSInfo name fsList =
   liftIO $
-    pollingLabelNew
-      1
-      $ do
-        fsOut <- readProcess "df" ("-kP" : fsList) ""
-        let fsList = map (takeLast 2 . words) $ drop 1 $ lines fsOut
-        return $ Text.pack $ (name ++) $ intercalate ", " $ map unwords fsList
+    pollingLabelNew 1 $ do
+      fsOut <- readProcess "df" ("-kP" : fsList) ""
+      let fsList = map (takeLast 2 . words) $ drop 1 $ lines fsOut
+      return $ Text.pack $ (name ++) $ intercalate ", " $ map unwords fsList
   where
     takeLast i = take i . reverse
 
