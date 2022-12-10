@@ -92,11 +92,11 @@ Can be an integer to determine the exact padding."
    (constants    (doom-lighten blue 0.3))
    (functions    dark-cyan)
    (keywords     lime)
-   (methods      blue)
+   (methods      violet)
    (operators    orange)
    (type         yellow)
    (strings      cyan)
-   (variables    violet)
+   (variables    fg)
    (numbers      magenta)
 
    (region       `(,(doom-lighten (car bg-alt) 0.15) ,@(doom-lighten (cdr base1) 0.35)))
