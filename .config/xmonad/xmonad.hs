@@ -64,7 +64,7 @@ wsKeys = [xK_1 .. xK_9] ++ [xK_grave]
 -- mod + monitorKey ;; move focus to monitor
 -- mod + shift + monitorKey ;; move focused window to monitor
 -- mod + control + monitorKey ;; swap workspace with monitor
-monitorKeys = [xK_u, xK_i, xK_o]
+monitorKeys = [xK_l, xK_h]
 
 myStartupHook = spawn "~/.config/xmonad/startup.fish"
 
