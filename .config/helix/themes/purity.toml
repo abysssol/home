@@ -66,11 +66,11 @@ special = { fg = "red", modifiers = ["bold"] }
 "ui.menu.selected" = { fg = "black", bg = "light-gray", modifiers = ["bold"] }
 "ui.menu.scroll" = { fg = "light-gray", bg = "gray" }
 
-diagnostic = { modifiers = ["underlined"] }
-"diagnostic.hint" = { fg = "white" }
-"diagnostic.info" = { fg = "cyan" }
-"diagnostic.warning" = { fg = "yellow" }
-"diagnostic.error" = { fg = "red" }
+diagnostic = { underline = { style = "line" } }
+"diagnostic.hint" = { underline = { style = "line", color = "white" } }
+"diagnostic.info" = { underline = { style = "line", color = "cyan" } }
+"diagnostic.warning" = { underline = { style = "line", color = "yellow" } }
+"diagnostic.error" = { underline = { style = "line", color = "red" } }
 
 hint = "white"
 info = "cyan"
