@@ -1,7 +1,9 @@
 [menu]
-poweroff = true
-reboot = true
+poweroff = "systemctl poweroff"
+reboot = "systemctl reboot"
 suspend = "slock & systemctl suspend"
+hibernate = { run = "slock & systemctl hibernate", group = -1 }
+
 
 [config.dmenu]
 prompt = "system:"
