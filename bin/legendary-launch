@@ -1,0 +1,5 @@
+#! /usr/bin/env fish
+
+set -e LD_PRELOAD
+set -e LD_LIBRARY_PATH
+legendary launch $argv --dry-run &| rg 'Launch parameters: wine (.*)' -or '$1'
