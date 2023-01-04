@@ -3,6 +3,7 @@ import Data.List
 import qualified Data.Text as Text
 import System.Process
 import System.Taffybar
+import System.Taffybar.Context (TaffyIO)
 import System.Taffybar.SimpleConfig
 import System.Taffybar.Widget
 import System.Taffybar.Widget.Generic.Graph
@@ -15,7 +16,7 @@ main =
       defaultSimpleTaffyConfig
         { startWidgets = [layout, tray, workspaces],
           endWidgets = [dateTime, cpu, memory, disk],
-          monitorsAction = usePrimaryMonitor,
+          monitorsAction = useMonitor 1,
           widgetSpacing = 30,
           startupHook = liftIO $ do
             spawnCommand "~/.config/xmonad/after-bar.fish"
@@ -26,6 +27,7 @@ main =
     disk = showFSInfo "disk: " ["/", "/ext"]
     memory = textMemoryMonitorNew "ram: $used$" 1
     layout = layoutNew defaultLayoutConfig
+    useMonitor id = return [id]
 
 showFSInfo name fsList =
   liftIO $
