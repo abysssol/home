@@ -60,7 +60,8 @@ cpu = cpuMonitorNew cpuCfg 0.2 "cpu"
     cpuCfg =
       defaultGraphConfig
         { graphDataColors = [(1, 0.75, 0, 1), (0, 0.75, 1, 1)],
-          graphLabel = Just $ Text.pack "cpu: ",
+          graphDataStyles = [Line, Line],
+          graphLabel = Just $ Text.pack "cpu",
           graphDirection = RIGHT_TO_LEFT,
           graphHistorySize = 50,
           graphWidth = 100,
