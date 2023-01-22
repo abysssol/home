@@ -15,7 +15,7 @@ main =
     toTaffyConfig
       defaultSimpleTaffyConfig
         { startWidgets = [layout, tray, workspaces],
-          endWidgets = [dateTime, cpu, memory, disk],
+          endWidgets = [dateTime, cpu, memory, fs],
           monitorsAction = useMonitor 0,
           widgetSpacing = 30,
           barHeight = ExactSize 30,
@@ -25,7 +25,7 @@ main =
         }
   where
     tray = sniTrayNew
-    disk = showFSInfo "disk: " ["/", "/ext"]
+    fs = showFSInfo "fs: " ["/", "/ext"]
     memory = textMemoryMonitorNew "ram: $used$" 1
     layout = layoutNew defaultLayoutConfig
     useMonitor id = return [id]
