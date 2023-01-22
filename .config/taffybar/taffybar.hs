@@ -34,9 +34,11 @@ showFSInfo name fsList =
   liftIO $
     pollingLabelNew 1 $ do
       fsOut <- readProcess "df" ("-kP" : fsList) ""
-      let fsList = map (takeLast 2 . words) $ drop 1 $ lines fsOut
-      return $ Text.pack $ (name ++) $ intercalate ", " $ map unwords fsList
+      let dfList = map (takeLast 2 . words) $ drop 1 $ lines fsOut
+      let matches = map snd $ filter fsMatches $ zip fsList dfList
+      return $ Text.pack $ (name ++) $ intercalate ", " $ map unwords matches
   where
+    fsMatches (request, reply) = request == head reply
     takeLast i = take i . reverse
 
 dateTime =
