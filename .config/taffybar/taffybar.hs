@@ -16,8 +16,9 @@ main =
       defaultSimpleTaffyConfig
         { startWidgets = [layout, tray, workspaces],
           endWidgets = [dateTime, cpu, memory, disk],
-          monitorsAction = useMonitor 1,
+          monitorsAction = useMonitor 0,
           widgetSpacing = 30,
+          barHeight = ExactSize 30,
           startupHook = liftIO $ do
             spawnCommand "~/.config/xmonad/after-bar.fish"
             return ()
