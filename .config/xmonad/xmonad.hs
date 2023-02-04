@@ -24,12 +24,12 @@ import XMonad.Util.Cursor
 import XMonad.Util.WorkspaceCompare
 
 main =
-  xmonad $
-    docks
+  xmonad
+    $ docks
       . setEwmhActivateHook doAskUrgent
       . ewmh
       . pagerHints
-      $ myConfig
+    $ myConfig
 
 myConfig =
   desktopConfig
@@ -55,7 +55,7 @@ screenLocker = "slock"
 
 dmm script = concat ["dmm ~/.config/xmonad/", script, ".toml"]
 
-myWorkspaces = ["web", "dev", "doc", "steam", "5", "6", "7", "8", "9", "0"]
+myWorkspaces = ["web", "dev", "doc", "launch", "5", "6", "7", "8", "9", "0"]
 
 -- mod + wsKey ;; move focus to workspace
 -- mod + shift + wsKey ;; move focused window to workspace
@@ -68,14 +68,15 @@ monitorKeys = [xK_h, xK_l]
 
 myStartupHook = spawn "~/.config/xmonad/startup.fish"
 
-myManageHook = custom <+> manageHook desktopConfig
-  where
-    custom =
-      composeAll
-        [ className =? "Tor Browser" --> doFloat,
-          className =? "Steam" --> doShift "steam",
-          isDialog --> doFloat
-        ]
+myManageHook =
+  manageHook desktopConfig
+    <+> composeAll
+      [ className =? "Steam" --> doShift "launch",
+        className =? "heroic" --> doShift "launch",
+        className =? "PrismLauncher" --> doShift "launch",
+        className =? "Tor Browser" --> doFloat,
+        isDialog --> doFloat
+      ]
 
 myLayoutHook =
   avoidStruts $
