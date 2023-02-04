@@ -1,0 +1,22 @@
+{
+    "colors": {
+        "Window": "#101010",
+        "WindowText": "#f0f0f0",
+        "Base": "#101010",
+        "AlternateBase": "#202020",
+        "Text": "#f0f0f0",
+        "BrightText": "#ffffff",
+        "Button": "#202020",
+        "ButtonText": "#f0f0f0",
+        "Highlight": "#00c0ff",
+        "HighlightedText": "#000000",
+        "ToolTipBase": "#101010",
+        "ToolTipText": "#f0f0f0",
+        "Link": "#c000ff",
+        "fadeAmount": 0.5,
+        "fadeColor": "#404040"
+    },
+    "name": "Purity",
+    "qssFilePath": "themeStyle.css",
+    "widgets": "Fusion"
+}
