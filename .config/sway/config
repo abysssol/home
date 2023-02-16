@@ -22,6 +22,8 @@ set $run dmm ~/.config/xmonad/run.toml
 set $common dmm ~/.config/xmonad/common.toml
 set $system dmm ~/.config/xmonad/system.toml
 
+font "Hack Nerd Font 10"
+
 ### Output configuration
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
@@ -211,7 +213,6 @@ mode "resize" bindsym {
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     position top
-    font "Hack Nerd Font 10"
     mode hide
     modifier $mod+Alt
 
