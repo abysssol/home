@@ -1,7 +1,7 @@
 ### Variables
 #
 
-# Logo key. Use Mod1 for Alt.
+# Primary modifier key, super key
 set $mod Mod4
 
 # Home row direction keys, like vim
@@ -10,52 +10,56 @@ set $down j
 set $up k
 set $right l
 
-# Your preferred terminal emulator
+# Terminal emulator
 set $term alacritty
 
+# Web browser
 set $browser librewolf
 
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
+# Application launchers
 set $run dmm ~/.config/xmonad/run.toml
 set $common dmm ~/.config/xmonad/common.toml
 set $system dmm ~/.config/xmonad/system.toml
 
-font "Hack Nerd Font 10"
-
-### Output configuration
 #
+### Theme
+#
+
+font "Hack Nerd Font 12"
+seat * {
+    xcursor_theme "Phinger Cursors" 32
+    hide_cursor 5000
+}
+xwayland enable
+smart_borders on
+default_border normal 1
+default_floating_border normal 1
+client.focused #00c0ff #101010 #ffffff #ffc000 #00c0ff
+client.focused_inactive #404040 #202020 #f0f0f0 #00ffc0 #404040
+client.unfocused #101010 #101010 #f0f0f0 #808080 #101010
+
+#
+### Window management
+#
+
+assign {
+    [class="Steam"] 3: launch
+    [app_id="org.prismlauncher.PrismLauncher"] 3: launch
+    [class="heroic"] 3: launch
+}
+for_window [urgent=recent class="heroic"] urgent disable
+
+#
+### Output
+#
+
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 output DP-1 resolution 2560x1440@165Hz
 output * background ~/Pictures/abyss/abyss.png fit #000000
 
-### Idle configuration
 #
-# Example configuration:
+### Input
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
-
-### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
 
 input "5426:550:Razer_Razer_Huntsman_Elite" {
     xkb_numlock enabled
@@ -92,7 +96,9 @@ bindsym {
     $mod+Shift+q reload
 
     # Lock screen
-    $mod+Shift+z exec swaylock -f -F -e -c 000000
+    $mod+Shift+z exec swaylock -f -F -e -c 000000 \
+        --ring-color 00c0ff \
+        --key-hl-color 00ffc0
 
     # Exit sway (logs you out of your Wayland session)
     $mod+Control+Shift+q exit
@@ -118,28 +124,28 @@ bindsym {
     #
 
     # Switch to workspace
-    $mod+1 workspace 1: web
-    $mod+2 workspace 2: dev
-    $mod+3 workspace 3: doc
-    $mod+4 workspace 4: launch
-    $mod+5 workspace 5
-    $mod+6 workspace 6
-    $mod+7 workspace 7
-    $mod+8 workspace 8
-    $mod+9 workspace 9
-    $mod+0 workspace 10
+    $mod+1 workspace 0: web
+    $mod+2 workspace 1: dev
+    $mod+3 workspace 2: doc
+    $mod+4 workspace 3: launch
+    $mod+5 workspace 4
+    $mod+6 workspace 5
+    $mod+7 workspace 6
+    $mod+8 workspace 7
+    $mod+9 workspace 8
+    $mod+0 workspace 9
 
     # Move focused container to workspace
-    $mod+Shift+1 move container to workspace 1: web
-    $mod+Shift+2 move container to workspace 2: dev
-    $mod+Shift+3 move container to workspace 3: doc
-    $mod+Shift+4 move container to workspace 4: launch
-    $mod+Shift+5 move container to workspace 5
-    $mod+Shift+6 move container to workspace 6
-    $mod+Shift+7 move container to workspace 7
-    $mod+Shift+8 move container to workspace 8
-    $mod+Shift+9 move container to workspace 9
-    $mod+Shift+0 move container to workspace 10
+    $mod+Shift+1 move container to workspace 0: web
+    $mod+Shift+2 move container to workspace 1: dev
+    $mod+Shift+3 move container to workspace 2: doc
+    $mod+Shift+4 move container to workspace 3: launch
+    $mod+Shift+5 move container to workspace 4
+    $mod+Shift+6 move container to workspace 5
+    $mod+Shift+7 move container to workspace 6
+    $mod+Shift+8 move container to workspace 7
+    $mod+Shift+9 move container to workspace 8
+    $mod+Shift+0 move container to workspace 9
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 
@@ -147,14 +153,13 @@ bindsym {
     # Layout stuff:
     #
 
-    # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
-    # respectively.
-    $mod+Shift+v splith
-    $mod+v splitv
+    # Split current window into container
+    $mod+s split vertical
+    $mod+Shift+s split horizontal
+    $mod+Control+s split none
 
     # Switch the current container between different layout styles
-    $mod+s layout stacking
+    # $mod+s layout stacking
     $mod+w layout tabbed
     $mod+e layout toggle split
 
@@ -202,6 +207,7 @@ mode "resize" bindsym {
     $right resize grow width 10px
 
     # Return to default mode
+    $mod+Semicolon mode "default"
     Return mode "default"
     Escape mode "default"
 }
@@ -213,10 +219,15 @@ mode "resize" bindsym {
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     position top
+
     mode hide
     modifier $mod+Alt
 
-    status_command while date +'%a %b %F %T'; do sleep 1; done
+    icon_theme "Breeze Dark"
+
+    status_command while sleep 1; do \
+        echo $() \  $(date +'%a %b %F %T') \ ; \
+        done
 
     colors {
         statusline #f0f0f0
