@@ -32,8 +32,8 @@ seat * {
 }
 xwayland enable
 smart_borders on
-default_border normal 1
-default_floating_border normal 1
+default_border pixel 1
+default_floating_border pixel 1
 client.focused #00c0ff #101010 #ffffff #ffc000 #00c0ff
 client.focused_inactive #404040 #202020 #f0f0f0 #00ffc0 #404040
 client.unfocused #101010 #101010 #f0f0f0 #808080 #101010
