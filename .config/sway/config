@@ -37,6 +37,12 @@ default_floating_border pixel 1
 client.focused #00c0ff #101010 #ffffff #ffc000 #00c0ff
 client.focused_inactive #404040 #202020 #f0f0f0 #00ffc0 #404040
 client.unfocused #101010 #101010 #f0f0f0 #808080 #101010
+exec_always {
+    dconf write /org/gnome/desktop/interface/gtk-theme "'Flat-Remix-GTK-Blue-Darkest'"
+    dconf write /org/gnome/desktop/interface/icon-theme "'paper'"
+    dconf write /org/gnome/desktop/interface/cursor-theme "'phinger-cursors'"
+    dconf write /org/gnome/desktop/interface/font-name "'Noto Sans 12'"
+}
 
 #
 ### Window management
