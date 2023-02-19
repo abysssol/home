@@ -52,6 +52,8 @@ client.unfocused #101010 #101010 #f0f0f0 #808080 #101010
 ### Window management
 #
 
+xwayland enable
+
 assign {
     [class="Steam"] 3: launch
     [app_id="org.prismlauncher.PrismLauncher"] 3: launch
@@ -108,12 +110,12 @@ bindsym {
     # Reload configuration
     $mod+Shift+q reload
 
+    # Exit sway
+    $mod+Control+Shift+q exit
+
     # Lock screen
     $mod+Shift+z exec swaylock -f -F -e -c 000000 \
         --ring-color 00c0ff --key-hl-color 00ffc0
-
-    # Exit sway
-    $mod+Control+Shift+q exit
 
     #
     ### Windows
@@ -201,10 +203,10 @@ bindsym {
 }
 
 mode "resize" bindsym {
-    $left resize shrink width 10px
-    $down resize grow height 10px
-    $up resize shrink height 10px
-    $right resize grow width 10px
+    $left resize shrink width 150px
+    $down resize grow height 150px
+    $up resize shrink height 150px
+    $right resize grow width 150px
 
     # Return to default mode
     $mod+Semicolon mode "default"
