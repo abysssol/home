@@ -76,61 +76,63 @@ input "5426:550:Razer_Razer_Huntsman_Elite" {
     xkb_options caps:escape
 }
 
+#
 ### Key bindings
+#
 
+# Drag and resize floating window
 floating_modifier $mod normal
 
 bindsym {
-    ### Basics:
+    ### Basics
     #
 
-    # Start a terminal
+    # Terminal emulator
     $mod+t exec $term
 
-    # Start browser
+    # Web browser
     $mod+b exec $browser
 
     # Kill focused window
     $mod+Shift+c kill
 
-    # Start launcher
+    # Program menu
     $mod+r exec $run
 
-    # Launch common
+    # Common program
     $mod+Shift+r exec $common
 
-    # System commands launcher
+    # System commands
     $mod+q exec $system
 
-    # Reload the configuration file
+    # Reload configuration
     $mod+Shift+q reload
 
     # Lock screen
     $mod+Shift+z exec swaylock -f -F -e -c 000000 \
-        --ring-color 00c0ff \
-        --key-hl-color 00ffc0
+        --ring-color 00c0ff --key-hl-color 00ffc0
 
-    # Exit sway (logs you out of your Wayland session)
+    # Exit sway
     $mod+Control+Shift+q exit
 
     #
-    ### Moving around:
+    ### Windows
     #
 
-    # Move your focus around
+    # Move focus around
     $mod+$left focus left
     $mod+$down focus down
     $mod+$up focus up
     $mod+$right focus right
 
-    # Move the focused window with the same, but add Shift
+    # Move focused window
     $mod+Shift+$left move left
     $mod+Shift+$down move down
     $mod+Shift+$up move up
     $mod+Shift+$right move right
 
     #
-    # Workspaces:
+    # Workspaces
     #
 
     # Switch to workspace
@@ -156,27 +158,25 @@ bindsym {
     $mod+Shift+8 move container to workspace 7
     $mod+Shift+9 move container to workspace 8
     $mod+Shift+0 move container to workspace 9
-    # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
 
     #
-    # Layout stuff:
+    # Layout
     #
 
-    # Split current window into container
+    # Window splitting
     $mod+s split vertical
     $mod+Shift+s split horizontal
     $mod+Control+s split none
 
-    # Switch the current container between different layout styles
-    # $mod+s layout stacking
+    # Switch layout style for current container
     $mod+w layout tabbed
-    $mod+e layout toggle split
+    $mod+Shift+w layout toggle split
+    $mod+Control+w mode "layout"
 
     # Make the current focus fullscreen
     $mod+f fullscreen
 
-    # Toggle the current focus between tiling and floating mode
+    # Toggle the focused window between tiling and floating mode
     $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
@@ -184,33 +184,23 @@ bindsym {
 
     # Move focus to the parent container
     $mod+a focus parent
+    $mod+Shift+a focus child
 
-    #
-    # Scratchpad:
-    #
-
-    # Sway has a "scratchpad", which is a bag of holding for windows.
-    # You can send windows there and get them back later.
-
-    # Move the currently focused window to the scratchpad
-    $mod+Shift+minus move scratchpad
-
-    # Show the next scratchpad window or hide the focused scratchpad window.
-    # If there are multiple scratchpad windows, this command cycles through them.
-    $mod+minus scratchpad show
-
-    #
     # Resizing containers:
+    $mod+Semicolon mode "resize"
+
+    #
+    # Scratchpad
     #
 
-    $mod+Semicolon mode "resize"
+    # Show next scratchpad window or hide focused scratchpad window
+    $mod+Grave scratchpad show
+
+    # Move focused window to scratchpad
+    $mod+Shift+Grave move scratchpad
 }
 
 mode "resize" bindsym {
-    # left will shrink the containers width
-    # right will grow the containers width
-    # up will shrink the containers height
-    # down will grow the containers height
     $left resize shrink width 10px
     $down resize grow height 10px
     $up resize shrink height 10px
@@ -218,7 +208,18 @@ mode "resize" bindsym {
 
     # Return to default mode
     $mod+Semicolon mode "default"
-    Return mode "default"
+    Escape mode "default"
+}
+
+mode "layout" bindsym {
+    d layout default
+    h layout splith
+    v layout splitv
+    s layout stacking
+    t layout tabbed
+
+    # Return to default mode
+    $mod+Control+w mode "default"
     Escape mode "default"
 }
 
@@ -226,17 +227,16 @@ mode "resize" bindsym {
 # Status Bar:
 #
 
-# Read `man 5 sway-bar` for more information about this section.
 bar {
     position top
 
     mode hide
     modifier $mod+Alt
 
-    icon_theme "Breeze Dark"
+    icon_theme "paper"
 
     status_command while sleep 1; do \
-        echo $() \  $(date +'%a %b %F %T') \ ; \
+        echo $(date +'%a %b %F %T') \ ; \
         done
 
     colors {
