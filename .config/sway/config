@@ -59,7 +59,10 @@ assign {
     [app_id="org.prismlauncher.PrismLauncher"] 3: launch
     [class="heroic"] 3: launch
 }
-for_window [urgent=recent class="heroic"] urgent disable
+for_window {
+    [urgent=recent class="heroic"] urgent disable
+    [class="Tor Browser"] floating enable
+}
 
 #
 ### Output
