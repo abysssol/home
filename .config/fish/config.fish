@@ -5,7 +5,7 @@ set -gx MANPAGER "sh -c 'col -bx | bat -pl man'"
 
 alias nix-shell "nix-shell --run fish"
 alias clippy-all "cargo clippy -- -D clippy::all -W clippy::pedantic -W clippy::nursery"
-alias dl-music "yt-dlp --no-playlist --embed-metadata -x --audio-format flac"
+alias dl-music "yt-dlp --no-playlist --embed-metadata -x --audio-format flac -P ~/Downloads"
 
 alias ls "exa --group-directories-first"
 alias ll "ls -lF"
