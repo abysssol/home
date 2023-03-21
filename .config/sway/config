@@ -56,6 +56,7 @@ xwayland enable
 
 assign {
     [class="Steam"] 3: launch
+    [title="Steam"] 3: launch
     [app_id="org.prismlauncher.PrismLauncher"] 3: launch
     [class="heroic"] 3: launch
 }
