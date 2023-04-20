@@ -1,5 +1,5 @@
 set -gx EDITOR "hx"
-set -gx VISUAL "emacsclient -c -a ''"
+set -gx VISUAL "alacritty -e hx"
 set -gx SUDO_EDITOR $EDITOR
 set -gx MANPAGER "sh -c 'col -bx | bat -pl man'"
 
