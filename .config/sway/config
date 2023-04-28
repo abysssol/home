@@ -53,6 +53,8 @@ client.unfocused #101010 #101010 #f0f0f0 #808080 #101010
 #
 
 xwayland enable
+focus_on_window_activation none
+popup_during_fullscreen smart
 
 assign {
     [class="Steam"] 3: launch
@@ -61,7 +63,6 @@ assign {
     [class="heroic"] 3: launch
 }
 for_window {
-    [urgent=recent class="heroic"] urgent disable
     [class="Tor Browser"] floating enable
 }
 
