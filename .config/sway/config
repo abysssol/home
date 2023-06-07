@@ -176,8 +176,8 @@ bindsym {
 
     # Window splitting
     $mod+s split vertical
-    $mod+Shift+s split horizontal
-    $mod+Control+s split none
+    $mod+Shift+s split none
+    $mod+Control+s split horizontal
 
     # Switch layout style for current container
     $mod+w layout tabbed
