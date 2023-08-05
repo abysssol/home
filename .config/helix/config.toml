@@ -2,5 +2,5 @@ theme = "purity"
 
 [editor]
 cursorline = true
-rulers = [ 100 ]
+rulers = [ 101 ]
 indent-guides.render = true
