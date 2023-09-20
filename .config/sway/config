@@ -19,7 +19,7 @@ set $browser librewolf
 # Application launchers
 set $run dmm ~/.config/xmonad/run.toml
 set $common dmm ~/.config/xmonad/common.toml
-set $system dmm ~/.config/xmonad/system.toml
+set $system dmm ~/.config/sway/system.toml
 
 #
 ### Theme
@@ -120,8 +120,7 @@ bindsym {
     $mod+Control+Shift+q exit
 
     # Lock screen
-    $mod+Shift+z exec swaylock -f -F -e -c 000000 \
-        --ring-color 00c0ff --key-hl-color 00ffc0
+    $mod+Shift+z exec lock-sway
 
     # Enable/disable auto hiding cursor after inactivity
     $mod+p seat * hide_cursor 5000

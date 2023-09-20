@@ -1,0 +1,9 @@
+[menu]
+poweroff = "systemctl poweroff"
+reboot = "systemctl reboot"
+suspend = """lock-sway & systemctl suspend"""
+hibernate = { run = """lock-sway & systemctl hibernate""", group = -1 }
+
+
+[config.dmenu]
+prompt = "system:"

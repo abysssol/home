@@ -1,5 +1,5 @@
 [menu]
-music = "alacritty -e mpv --shuffle --loop-playlist ~/Music/music/* ~/Music/nightcore/*"
+music = "alacritty -e mpv --shuffle --loop-playlist ~/Music/{music, nightcore, old}/*"
 steam = true
 heroic = true
 prismlauncher = true
