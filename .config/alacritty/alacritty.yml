@@ -82,7 +82,7 @@ scrolling:
 
 font:
   normal:
-    family: Hack Nerd Font
+    family: Hack Nerd Font Mono
 
   bold:
     style: Bold
