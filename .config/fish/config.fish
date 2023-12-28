@@ -1,6 +1,8 @@
 set -gx EDITOR "hx"
 set -gx VISUAL $EDITOR
-set -gx MANPAGER "sh -c 'col -bx | bat -pl man'"
+set -gx PAGER "less -FRX"
+set -gx MANPAGER "sh -c 'col -bx | bat -p -l man'"
+set -gx MANROFFOPT "-c"
 
 alias nix-shell "nix-shell --run fish"
 alias clippy-all "cargo clippy -- -D clippy::all -W clippy::pedantic -W clippy::nursery"
