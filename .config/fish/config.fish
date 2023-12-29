@@ -1,6 +1,6 @@
 set -gx EDITOR "hx"
 set -gx VISUAL $EDITOR
-set -gx PAGER "less -FRX"
+set -gx LESS "-FRX"
 set -gx MANPAGER "sh -c 'col -bx | bat -p -l man'"
 set -gx MANROFFOPT "-c"
 
