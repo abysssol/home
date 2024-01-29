@@ -244,7 +244,7 @@ bar {
     position top
 
     mode hide
-    modifier $mod+Alt
+    modifier $mod
 
     icon_theme "paper"
 
