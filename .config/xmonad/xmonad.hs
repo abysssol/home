@@ -107,12 +107,12 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) =
       ((m_s, xK_r), spawn $ dmm "common"),
       ((m, xK_r), spawn $ dmm "run"),
       -- Window Control
-      ((m, xK_m), windows W.focusMaster),
-      ((m, xK_j), windows W.focusDown),
-      ((m, xK_k), windows W.focusUp),
-      ((m_s, xK_m), windows W.swapMaster),
-      ((m_s, xK_j), windows W.swapDown),
-      ((m_s, xK_k), windows W.swapUp),
+      ((m, xK_Left), windows W.focusMaster),
+      ((m, xK_Down), windows W.focusDown),
+      ((m, xK_Up), windows W.focusUp),
+      ((m_s, xK_Left), windows W.swapMaster),
+      ((m_s, xK_Down), windows W.swapDown),
+      ((m_s, xK_Up), windows W.swapUp),
       ((m_s, xK_c), kill),
       ((m_c_s, xK_c), killAll),
       -- Layout Control
