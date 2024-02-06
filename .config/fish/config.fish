@@ -8,9 +8,9 @@ alias nix-shell "nix-shell --run fish"
 alias clippy-all "cargo clippy -- -D clippy::all -W clippy::pedantic -W clippy::nursery"
 alias dl-music "yt-dlp --no-playlist --embed-metadata -x --audio-format flac -P ~/Downloads"
 
-alias ls "exa --group-directories-first"
-alias ll "ls -lF"
-alias la "ll -a"
+alias ls "eza --group-directories-first"
+alias ll "eza -lF --group-directories-first"
+alias la "eza -laF --group-directories-first"
 alias cl "clear"
 
 function fork
