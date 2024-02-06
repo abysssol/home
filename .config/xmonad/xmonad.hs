@@ -53,7 +53,7 @@ browser = "librewolf"
 
 screenLocker = "slock"
 
-dmm script = concat ["dmm ~/.config/xmonad/", script, ".toml"]
+dmm script = concat ["dmm ~/.config/dmm/", script, ".toml"]
 
 myWorkspaces = ["web", "dev", "doc", "launch", "5", "6", "7", "8", "9", "0"]
 
@@ -64,7 +64,7 @@ wsKeys = [xK_1 .. xK_9] ++ [xK_grave]
 -- mod + monitorKey ;; move focus to monitor
 -- mod + shift + monitorKey ;; move focused window to monitor
 -- mod + control + monitorKey ;; swap workspace with monitor
-monitorKeys = [xK_h, xK_l]
+monitorKeys = [xK_Left, xK_Right]
 
 myStartupHook = spawn "~/.config/xmonad/startup.fish"
 
@@ -107,10 +107,10 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) =
       ((m_s, xK_r), spawn $ dmm "common"),
       ((m, xK_r), spawn $ dmm "run"),
       -- Window Control
-      ((m, xK_Left), windows W.focusMaster),
+      ((m, xK_m), windows W.focusMaster),
       ((m, xK_Down), windows W.focusDown),
       ((m, xK_Up), windows W.focusUp),
-      ((m_s, xK_Left), windows W.swapMaster),
+      ((m_s, xK_m), windows W.swapMaster),
       ((m_s, xK_Down), windows W.swapDown),
       ((m_s, xK_Up), windows W.swapUp),
       ((m_s, xK_c), kill),

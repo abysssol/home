@@ -17,9 +17,9 @@ set $term alacritty
 set $browser librewolf
 
 # Application launchers
-set $run dmm ~/.config/xmonad/run.toml
-set $common dmm ~/.config/xmonad/common.toml
-set $system dmm ~/.config/sway/system.toml
+set $run dmm ~/.config/dmm/run.toml
+set $common dmm ~/.config/dmm/common.toml
+set $system dmm ~/.config/dmm/sway-system.toml
 
 #
 ### Theme

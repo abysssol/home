@@ -3,6 +3,8 @@ music = "alacritty -e mpv --shuffle --loop-playlist ~/Music/{music, nightcore, o
 steam = true
 heroic = true
 prismlauncher = true
+keepassxc = true
+element = "element-desktop"
 
 [config.dmenu]
 prompt = "common:"
