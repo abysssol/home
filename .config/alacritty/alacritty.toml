@@ -1,0 +1,91 @@
+[colors.bright]
+black = "#202020"
+blue = "#4000ff"
+cyan = "#00ffc0"
+green = "#00ff40"
+magenta = "#ff00c0"
+red = "#ff4000"
+white = "#ffffff"
+yellow = "#c0ff00"
+
+[colors.cursor]
+cursor = "#c0c0c0"
+text = "#000000"
+
+[colors.dim]
+black = "#000000"
+blue = "#2020c0"
+cyan = "#20c0c0"
+green = "#20c020"
+magenta = "#c020c0"
+red = "#c02020"
+white = "#c0c0c0"
+yellow = "#c0c020"
+
+[colors.normal]
+black = "#000000"
+blue = "#0040ff"
+cyan = "#00c0ff"
+green = "#40ff00"
+magenta = "#c000ff"
+red = "#ff0040"
+white = "#e0e0e0"
+yellow = "#ffc000"
+
+[colors.primary]
+background = "#101010"
+bright_foreground = "#ffffff"
+dim_foreground = "#c0c0c0"
+foreground = "#f0f0f0"
+
+[colors.selection]
+background = "#00c0ff"
+text = "#101010"
+
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
+[font]
+size = 12
+
+[font.bold]
+style = "Bold"
+
+[font.bold_italic]
+style = "Bold Italic"
+
+[font.italic]
+style = "Italic"
+
+[font.normal]
+family = "Hack Nerd Font Mono"
+
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key = "PageUp"
+mode = "~Alt"
+
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key = "PageDown"
+mode = "~Alt"
+
+[[keyboard.bindings]]
+action = "ScrollHalfPageUp"
+key = "PageUp"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollHalfPageDown"
+key = "PageDown"
+mode = "~Alt"
+mods = "Shift"
+
+[scrolling]
+history = 10000
+multiplier = 4
+
+[window]
+dynamic_padding = true
