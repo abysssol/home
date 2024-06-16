@@ -1,0 +1,4 @@
+#! /bin/sh
+
+swaylock -f -F -e -c 000000 \
+  --ring-color 00c0ff --key-hl-color 00ffc0
