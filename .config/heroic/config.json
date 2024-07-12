@@ -25,19 +25,30 @@
     "wrapperOptions": [],
     "showFps": false,
     "useGameMode": false,
-    "userInfo": {
-      "name": "abysssol"
-    },
     "wineCrossoverBottle": "Heroic",
     "winePrefix": "/home/abysssol/Games/Heroic/.prefix/default",
     "wineVersion": {
-      "bin": "/home/abysssol/.local/share/Steam/steamapps/common/Proton - Experimental/proton",
-      "name": "Proton - Proton - Experimental",
+      "bin": "/home/abysssol/.local/share/Steam/compatibilitytools.d/GE-Proton9-10/proton",
+      "name": "Proton - GE-Proton9-10",
       "type": "proton"
     },
     "enableEsync": true,
     "enableFsync": true,
-    "darkTrayIcon": false
+    "enableMsync": false,
+    "eacRuntime": true,
+    "battlEyeRuntime": true,
+    "beforeLaunchScriptPath": "",
+    "afterLaunchScriptPath": "",
+    "userInfo": {
+      "name": "abysssol"
+    },
+    "darkTrayIcon": false,
+    "useSteamRuntime": true,
+    "experimentalFeatures": {
+      "enableNewDesign": true,
+      "enableHelp": false,
+      "automaticWinetricksFixes": true
+    }
   },
   "version": "v0"
 }
