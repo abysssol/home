@@ -5,6 +5,7 @@ heroic = true
 prismlauncher = true
 keepassxc = true
 element = "element-desktop"
+calibre = true
 
 [config.dmenu]
 prompt = "common:"
