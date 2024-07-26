@@ -244,7 +244,8 @@ mode "layout" bindsym {
 # Status Bar:
 #
 
-set $date $(date +'%a %b %F %T')
+set $utc $(date -u +'%F %T')
+set $date $(date +'%a %b  %F %T')
 
 bar {
     position top
@@ -255,7 +256,7 @@ bar {
     icon_theme "paper"
 
     status_command while sleep 1; do \
-        echo "\"$date  \""; \
+        echo "\"$utc UTC  |  $date  \""; \
         done
 
     colors {
