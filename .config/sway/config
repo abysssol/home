@@ -188,7 +188,7 @@ bindsym {
     # Switch layout style for current container
     $mod+w layout tabbed
     $mod+Shift+w layout toggle split
-    $mod+Control+w mode "layout"
+    $mod+Control+w layout stacking
 
     # Make the current focus fullscreen
     $mod+f fullscreen
@@ -225,18 +225,6 @@ mode "resize" bindsym {
 
     # Return to default mode
     $mod+Semicolon mode "default"
-    Escape mode "default"
-}
-
-mode "layout" bindsym {
-    d layout default
-    h layout splith
-    v layout splitv
-    s layout stacking
-    t layout tabbed
-
-    # Return to default mode
-    $mod+Control+w mode "default"
     Escape mode "default"
 }
 
