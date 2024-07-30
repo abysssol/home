@@ -3,3 +3,5 @@
 	email = abysssol@pm.me
 [pull]
 	rebase = true
+[rebase]
+	autoSquash = true
