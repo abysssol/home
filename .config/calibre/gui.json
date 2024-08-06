@@ -145,28 +145,28 @@
   "font_stretch": 0,
   "geometry-of-calibre_main_window_geometry": {
     "frame_geometry": {
-      "height": 1438,
-      "width": 851,
-      "x": 1920,
+      "height": 1413,
+      "width": 2560,
+      "x": 0,
       "y": 0
     },
     "full_screened": false,
     "geometry": {
-      "height": 1438,
-      "width": 851,
-      "x": 1920,
+      "height": 1413,
+      "width": 2560,
+      "x": 0,
       "y": 0
     },
     "maximized": false,
     "normal_geometry": {
-      "height": 1438,
-      "width": 851,
-      "x": 1920,
+      "height": 1413,
+      "width": 2560,
+      "x": 0,
       "y": 0
     },
     "qt": {
       "__class__": "bytearray",
-      "__value__": "AdnQywADAAAAAAeAAAAAAAAACtIAAAWdAAAHgAAAAAAAAArSAAAFnQAAAAEAAAAACgAAAAeAAAAAAAAACtIAAAWd"
+      "__value__": "AdnQywADAAAAAAAAAAAAAAAACf8AAAWEAAAAAAAAAAAAAAn/AAAFhAAAAAAAAAAACgAAAAAAAAAAAAAACf8AAAWE"
     },
     "screen": {
       "depth": 32,
@@ -174,13 +174,13 @@
       "geometry_in_logical_pixels": {
         "height": 1440,
         "width": 2560,
-        "x": 1920,
+        "x": 0,
         "y": 0
       },
-      "index_in_screens_list": 1,
+      "index_in_screens_list": 0,
       "manufacturer": "GIGA-BYTE TECHNOLOGY CO., LTD.",
       "model": "M27Q P",
-      "name": "HDMI-A-1",
+      "name": "DP-3",
       "serial": "",
       "size_in_logical_pixels": {
         "height": 1440,
@@ -188,7 +188,7 @@
       },
       "virtual_geometry": {
         "height": 1440,
-        "width": 4480,
+        "width": 2560,
         "x": 0,
         "y": 0
       }
@@ -349,7 +349,7 @@
   },
   "grid view visible": false,
   "library_usage_stats": {
-    "/home/abysssol/Documents/calibre": 34
+    "/home/abysssol/Documents/calibre": 38
   },
   "light_palette_name": "",
   "light_palettes": {
