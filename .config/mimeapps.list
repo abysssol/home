@@ -1,6 +1,7 @@
 [Default Applications]
 inode/directory=pcmanfm-qt.desktop
 text/html=librewolf.desktop
+application/pdf=org.kde.okular.desktop
 x-scheme-handler/http=librewolf.desktop
 x-scheme-handler/https=librewolf.desktop
 x-scheme-handler/about=librewolf.desktop
