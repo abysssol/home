@@ -1,14 +1,73 @@
 {
+  "geometry-of-main_window_geometry": {
+    "frame_geometry": {
+      "height": 1413,
+      "width": 2560,
+      "x": 0,
+      "y": 0
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 1413,
+      "width": 2560,
+      "x": 0,
+      "y": 0
+    },
+    "maximized": false,
+    "normal_geometry": {
+      "height": 1413,
+      "width": 2560,
+      "x": 0,
+      "y": 0
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAAAAAAAAAAACf8AAAWEAAAAAAAAAAAAAAn/AAAFhAAAAAAAAAAACgAAAAAAAAAAAAAACf8AAAWE"
+    },
+    "screen": {
+      "depth": 32,
+      "device_pixel_ratio": 1.0,
+      "geometry_in_logical_pixels": {
+        "height": 1440,
+        "width": 2560,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "GIGA-BYTE TECHNOLOGY CO., LTD.",
+      "model": "M27Q P",
+      "name": "DP-3",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1440,
+        "width": 2560
+      },
+      "virtual_geometry": {
+        "height": 1440,
+        "width": 2560,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "main_window_state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAH9AAAAAgAAAAAAAAAAAAAAAPwCAAAAAvsAAAAQAHQAbwBjAC0AZABvAGMAawAAAAAA/////wAAAJIA////+wAAABYAcwBlAGEAcgBjAGgALQBkAG8AYwBrAAAAAAD/////AAAApgD///8AAAABAAAAAAAAAAD8AgAAAAT7AAAAFgBsAG8AbwBrAHUAcAAtAGQAbwBjAGsAAAAAAP////8AAACTAP////sAAAAcAGIAbwBvAGsAbQBhAHIAawBzAC0AZABvAGMAawAAAAAA/////wAAAQoA////+wAAABwAaQBuAHMAcABlAGMAdABvAHIALQBkAG8AYwBrAAAAAAD/////AAAAGAD////7AAAAHgBoAGkAZwBoAGwAaQBnAGgAdABzAC0AZABvAGMAawAAAAAA/////wAAAOcA////AAAKAAAABYUAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAAAAAAAAQAAAB4AYQBjAHQAaQBvAG4AcwBfAHQAbwBvAGwAYgBhAHICAAAAAP////8AAAAAAAAAAA=="
+  },
   "old_prefs_migrated": true,
   "session_data": {
     "book_scrollbar": false,
-    "controls_help_shown_count": 1,
+    "columns_per_screen": {
+      "landscape": 1,
+      "portrait": 1
+    },
+    "controls_help_shown_count": 2,
     "current_color_scheme": "black",
     "margin_bottom": 100,
     "margin_left": 200,
     "margin_right": 200,
     "margin_top": 100,
-    "read_mode": "flow",
+    "read_mode": "paged",
     "scroll_auto_boundary_delay": 50,
     "scroll_stop_boundaries": true,
     "standalone_font_settings": {},
@@ -19,6 +78,109 @@
       "singleinstance": false
     },
     "standalone_recently_opened": [
+      {
+        "authors": [
+          "David Deutsch"
+        ],
+        "key": "/home/abysssol/Documents/calibre/David Deutsch/The Beginning of Infinity (47)/The Beginning of Infinity - David Deutsch.epub",
+        "pathtoebook": "/home/abysssol/Documents/calibre/David Deutsch/The Beginning of Infinity (47)/The Beginning of Infinity - David Deutsch.epub",
+        "timestamp": "2024-08-11T21:26:21.135Z",
+        "title": "The Beginning of Infinity"
+      },
+      {
+        "authors": [
+          "Sheldon Axler"
+        ],
+        "key": "/home/abysssol/Downloads/Linear Algebra Done Right.pdf",
+        "pathtoebook": "/home/abysssol/Downloads/Linear Algebra Done Right.pdf",
+        "timestamp": "2024-08-11T20:50:20.544Z",
+        "title": "Linear Algebra Done Right"
+      },
+      {
+        "authors": [
+          "Sheldon Axler"
+        ],
+        "key": "/home/abysssol/Documents/calibre/Sheldon Axler/Linear Algebra Done Right (46)/Linear Algebra Done Right - Sheldon Axler.pdf",
+        "pathtoebook": "/home/abysssol/Documents/calibre/Sheldon Axler/Linear Algebra Done Right (46)/Linear Algebra Done Right - Sheldon Axler.pdf",
+        "timestamp": "2024-08-11T20:47:07.902Z",
+        "title": "Linear Algebra Done Right"
+      },
+      {
+        "authors": [
+          "Aho, Alfred V.",
+          "Monica S. Lam",
+          "Ravi Sethi",
+          "Jeffrey D. Ullman [Aho, Alfred V.]",
+          "chenjin5.com"
+        ],
+        "key": "/home/abysssol/Documents/calibre/Aho, Alfred V_/Compilers_ Principles, Techniques, and Tools (45)/Compilers_ Principles, Techniques, and Too - Aho, Alfred V_.epub",
+        "pathtoebook": "/home/abysssol/Documents/calibre/Aho, Alfred V_/Compilers_ Principles, Techniques, and Tools (45)/Compilers_ Principles, Techniques, and Too - Aho, Alfred V_.epub",
+        "timestamp": "2024-08-11T01:13:36.324Z",
+        "title": "Compilers: Principles, Techniques, and Tools, 2/e"
+      },
+      {
+        "authors": [
+          "Frank Herbert"
+        ],
+        "key": "/home/abysssol/Documents/calibre/Frank Herbert/Dune (42)/Dune - Frank Herbert.epub",
+        "pathtoebook": "/home/abysssol/Documents/calibre/Frank Herbert/Dune (42)/Dune - Frank Herbert.epub",
+        "timestamp": "2024-08-11T00:41:16.930Z",
+        "title": "Dune 1: Dune"
+      },
+      {
+        "authors": [
+          "Frank Herbert"
+        ],
+        "key": "/home/abysssol/Documents/calibre/Frank Herbert/God Emporer of Dune (41)/God Emporer of Dune - Frank Herbert.epub",
+        "pathtoebook": "/home/abysssol/Documents/calibre/Frank Herbert/God Emporer of Dune (41)/God Emporer of Dune - Frank Herbert.epub",
+        "timestamp": "2024-08-10T23:20:22.751Z",
+        "title": "Dune 4: God Emporer of Dune"
+      },
+      {
+        "authors": [
+          "Frank Herbert"
+        ],
+        "key": "/home/abysssol/Documents/calibre/Frank Herbert/Chapterhouse_ Dune (25)/Chapterhouse_ Dune - Frank Herbert.pdf",
+        "pathtoebook": "/home/abysssol/Documents/calibre/Frank Herbert/Chapterhouse_ Dune (25)/Chapterhouse_ Dune - Frank Herbert.pdf",
+        "timestamp": "2024-08-10T22:21:21.646Z",
+        "title": "Chapterhouse  Dune"
+      },
+      {
+        "authors": [
+          "rpg"
+        ],
+        "key": "/home/abysssol/Documents/calibre/rpg/OUP Book (18)/OUP Book - rpg.pdf",
+        "pathtoebook": "/home/abysssol/Documents/calibre/rpg/OUP Book (18)/OUP Book - rpg.pdf",
+        "timestamp": "2024-08-10T22:19:51.354Z",
+        "title": "OUP Book"
+      },
+      {
+        "authors": [
+          "Yu Okano"
+        ],
+        "key": "/home/abysssol/Documents/calibre/Yu Okano/The Unwanted Undead Adventurer, Vol. 01 (29)/The Unwanted Undead Adventurer, Vol. 01 - Yu Okano.pdf",
+        "pathtoebook": "/home/abysssol/Documents/calibre/Yu Okano/The Unwanted Undead Adventurer, Vol. 01 (29)/The Unwanted Undead Adventurer, Vol. 01 - Yu Okano.pdf",
+        "timestamp": "2024-08-10T21:56:54.364Z",
+        "title": "The Unwanted Undead Adventurer, Vol. 01"
+      },
+      {
+        "authors": [
+          "Yu Okano"
+        ],
+        "key": "/home/abysssol/Documents/calibre/Yu Okano/The Unwanted Undead Adventurer_ Volume 6 (36)/The Unwanted Undead Adventurer_ Volume 6 - Yu Okano.pdf",
+        "pathtoebook": "/home/abysssol/Documents/calibre/Yu Okano/The Unwanted Undead Adventurer_ Volume 6 (36)/The Unwanted Undead Adventurer_ Volume 6 - Yu Okano.pdf",
+        "timestamp": "2024-08-10T21:56:41.801Z",
+        "title": "The Unwanted Undead Adventurer: Volume 6"
+      },
+      {
+        "authors": [
+          "Volume 05"
+        ],
+        "key": "/home/abysssol/Documents/calibre/Volume 05/The Unwanted Undead Adventurer (38)/The Unwanted Undead Adventurer - Volume 05.pdf",
+        "pathtoebook": "/home/abysssol/Documents/calibre/Volume 05/The Unwanted Undead Adventurer (38)/The Unwanted Undead Adventurer - Volume 05.pdf",
+        "timestamp": "2024-08-10T21:56:00.367Z",
+        "title": "The Unwanted Undead Adventurer"
+      },
       {
         "authors": [
           "Gu zhen ren"

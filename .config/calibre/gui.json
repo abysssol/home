@@ -1,8 +1,14 @@
 {
+  "basic_metadata_widget_splitter_state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAEAAAADAAABAgAAAYYAAAEKAf////8BAAAAAQA="
+  },
   "book_list_pin_splitter_state": {
     "__class__": "bytearray",
     "__value__": "AAAA/wAAAAEAAAACAAABAAAAAEYA/////wEAAAABAA=="
   },
+  "bulk-mde-casing-algorithm": "title_case",
+  "bulk_metadata_window_tab": 0,
   "color_palette": "dark",
   "cover_grid_color": [
     80,
@@ -143,6 +149,57 @@
     false
   ],
   "font_stretch": 0,
+  "geometry-of-bulk_metadata_window_geometry": {
+    "frame_geometry": {
+      "height": 1390,
+      "width": 2490,
+      "x": 0,
+      "y": 0
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 1390,
+      "width": 2490,
+      "x": 0,
+      "y": 0
+    },
+    "maximized": false,
+    "normal_geometry": {
+      "height": 1390,
+      "width": 2490,
+      "x": 0,
+      "y": 0
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAAAAAAAAAAACbkAAAVtAAAAAAAAAAAAAAm5AAAFbQAAAAAAAAAACgAAAAAAAAAAAAAACbkAAAVt"
+    },
+    "screen": {
+      "depth": 32,
+      "device_pixel_ratio": 1.0,
+      "geometry_in_logical_pixels": {
+        "height": 1440,
+        "width": 2560,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "GIGA-BYTE TECHNOLOGY CO., LTD.",
+      "model": "M27Q P",
+      "name": "DP-3",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1440,
+        "width": 2560
+      },
+      "virtual_geometry": {
+        "height": 1440,
+        "width": 2560,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
   "geometry-of-calibre_main_window_geometry": {
     "frame_geometry": {
       "height": 1413,
@@ -249,26 +306,26 @@
     "frame_geometry": {
       "height": 384,
       "width": 575,
-      "x": 1920,
+      "x": 0,
       "y": 0
     },
     "full_screened": false,
     "geometry": {
       "height": 384,
       "width": 575,
-      "x": 1920,
+      "x": 0,
       "y": 0
     },
     "maximized": false,
     "normal_geometry": {
       "height": 384,
       "width": 575,
-      "x": 1920,
+      "x": 0,
       "y": 0
     },
     "qt": {
       "__class__": "bytearray",
-      "__value__": "AdnQywADAAAAAAeAAAAAAAAACb4AAAF/AAAHgAAAAAAAAAm+AAABfwAAAAEAAAAACgAAAAeAAAAAAAAACb4AAAF/"
+      "__value__": "AdnQywADAAAAAAAAAAAAAAAAAj4AAAF/AAAAAAAAAAAAAAI+AAABfwAAAAAAAAAACgAAAAAAAAAAAAAAAj4AAAF/"
     },
     "screen": {
       "depth": 32,
@@ -276,13 +333,13 @@
       "geometry_in_logical_pixels": {
         "height": 1440,
         "width": 2560,
-        "x": 1920,
+        "x": 0,
         "y": 0
       },
-      "index_in_screens_list": 1,
+      "index_in_screens_list": 0,
       "manufacturer": "GIGA-BYTE TECHNOLOGY CO., LTD.",
       "model": "M27Q P",
-      "name": "HDMI-A-1",
+      "name": "DP-3",
       "serial": "",
       "size_in_logical_pixels": {
         "height": 1440,
@@ -290,7 +347,58 @@
       },
       "virtual_geometry": {
         "height": 1440,
-        "width": 4480,
+        "width": 2560,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "geometry-of-metasingle_window_geometry3": {
+    "frame_geometry": {
+      "height": 1413,
+      "width": 2560,
+      "x": 0,
+      "y": 0
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 1413,
+      "width": 2560,
+      "x": 0,
+      "y": 0
+    },
+    "maximized": false,
+    "normal_geometry": {
+      "height": 1413,
+      "width": 2560,
+      "x": 0,
+      "y": 0
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAAAAAAAAAAACf8AAAWEAAAAAAAAAAAAAAn/AAAFhAAAAAAAAAAACgAAAAAAAAAAAAAACf8AAAWE"
+    },
+    "screen": {
+      "depth": 32,
+      "device_pixel_ratio": 1.0,
+      "geometry_in_logical_pixels": {
+        "height": 1440,
+        "width": 2560,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "GIGA-BYTE TECHNOLOGY CO., LTD.",
+      "model": "M27Q P",
+      "name": "DP-3",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1440,
+        "width": 2560
+      },
+      "virtual_geometry": {
+        "height": 1440,
+        "width": 2560,
         "x": 0,
         "y": 0
       }
@@ -300,26 +408,26 @@
     "frame_geometry": {
       "height": 765,
       "width": 1192,
-      "x": 1920,
+      "x": 0,
       "y": 0
     },
     "full_screened": false,
     "geometry": {
       "height": 765,
       "width": 1192,
-      "x": 1920,
+      "x": 0,
       "y": 0
     },
     "maximized": false,
     "normal_geometry": {
       "height": 765,
       "width": 1192,
-      "x": 1920,
+      "x": 0,
       "y": 0
     },
     "qt": {
       "__class__": "bytearray",
-      "__value__": "AdnQywADAAAAAAeAAAAAAAAADCcAAAL8AAAHgAAAAAAAAAwnAAAC/AAAAAEAAAAACgAAAAeAAAAAAAAADCcAAAL8"
+      "__value__": "AdnQywADAAAAAAAAAAAAAAAABKcAAAL8AAAAAAAAAAAAAASnAAAC/AAAAAAAAAAACgAAAAAAAAAAAAAABKcAAAL8"
     },
     "screen": {
       "depth": 32,
@@ -327,13 +435,13 @@
       "geometry_in_logical_pixels": {
         "height": 1440,
         "width": 2560,
-        "x": 1920,
+        "x": 0,
         "y": 0
       },
-      "index_in_screens_list": 1,
+      "index_in_screens_list": 0,
       "manufacturer": "GIGA-BYTE TECHNOLOGY CO., LTD.",
       "model": "M27Q P",
-      "name": "HDMI-A-1",
+      "name": "DP-3",
       "serial": "",
       "size_in_logical_pixels": {
         "height": 1440,
@@ -341,7 +449,58 @@
       },
       "virtual_geometry": {
         "height": 1440,
-        "width": 4480,
+        "width": 2560,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "geometry-of-single-cover-fetch-dialog-geometry": {
+    "frame_geometry": {
+      "height": 296,
+      "width": 296,
+      "x": 0,
+      "y": 0
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 296,
+      "width": 296,
+      "x": 0,
+      "y": 0
+    },
+    "maximized": false,
+    "normal_geometry": {
+      "height": 296,
+      "width": 296,
+      "x": 0,
+      "y": 0
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAAAAAAAAAAAAScAAAEnAAAAAAAAAAAAAAEnAAABJwAAAAAAAAAACgAAAAAAAAAAAAAAAScAAAEn"
+    },
+    "screen": {
+      "depth": 32,
+      "device_pixel_ratio": 1.0,
+      "geometry_in_logical_pixels": {
+        "height": 1440,
+        "width": 2560,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "GIGA-BYTE TECHNOLOGY CO., LTD.",
+      "model": "M27Q P",
+      "name": "DP-3",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1440,
+        "width": 2560
+      },
+      "virtual_geometry": {
+        "height": 1440,
+        "width": 2560,
         "x": 0,
         "y": 0
       }
@@ -349,7 +508,7 @@
   },
   "grid view visible": false,
   "library_usage_stats": {
-    "/home/abysssol/Documents/calibre": 38
+    "/home/abysssol/Documents/calibre": 41
   },
   "light_palette_name": "",
   "light_palettes": {
@@ -407,8 +566,15 @@
       "tag_browser": true
     }
   },
+  "previous_sort_order_BooksView": {
+    "authors": true,
+    "title": true
+  },
   "quick_start_guide_added": true,
   "qv_open_at_shutdown": false,
+  "recently_used_languages": [
+    "English"
+  ],
   "search bar visible": true,
   "show_emblems": false,
   "tag browser search box visible": false,
