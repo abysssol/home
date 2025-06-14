@@ -1,4 +1,4 @@
-import qualified Data.Map as M
+import Data.Map qualified as M
 import System.Exit
 import XMonad
 import XMonad.Actions.WithAll
@@ -11,15 +11,15 @@ import XMonad.Hooks.TaffybarPagerHints
 import XMonad.Hooks.UrgencyHook
 import XMonad.Layout.GridVariants
 import XMonad.Layout.Magnifier
-import qualified XMonad.Layout.Magnifier as Magnifier
-import qualified XMonad.Layout.MultiToggle as MT
+import XMonad.Layout.Magnifier qualified as Magnifier
+import XMonad.Layout.MultiToggle qualified as MT
 import XMonad.Layout.NoBorders
 import XMonad.Layout.PerWorkspace
 import XMonad.Layout.Renamed
 import XMonad.Layout.ThreeColumns
 import XMonad.Layout.ToggleLayouts
-import qualified XMonad.Layout.ToggleLayouts as T
-import qualified XMonad.StackSet as W
+import XMonad.Layout.ToggleLayouts qualified as T
+import XMonad.StackSet qualified as W
 import XMonad.Util.Cursor
 import XMonad.Util.WorkspaceCompare
 
@@ -47,7 +47,7 @@ myConfig =
       handleEventHook = handleEventHook def
     }
 
-editor = "emacsclient -c -a ''"
+editor = "alacritty -e hx"
 
 browser = "librewolf"
 
@@ -55,25 +55,27 @@ screenLocker = "slock"
 
 dmm script = concat ["dmm ~/.config/dmm/", script, ".toml"]
 
-myWorkspaces = ["web", "dev", "doc", "launch", "5", "6", "7", "8", "9", "0"]
+myWorkspaces = ["web", "dev", "doc", "launch", "5", "6", "7", "8", "9", "misc"]
 
 -- mod + wsKey ;; move focus to workspace
 -- mod + shift + wsKey ;; move focused window to workspace
-wsKeys = [xK_1 .. xK_9] ++ [xK_grave]
+wsKeys = [xK_1 .. xK_9] ++ [xK_0]
 
 -- mod + monitorKey ;; move focus to monitor
 -- mod + shift + monitorKey ;; move focused window to monitor
 -- mod + control + monitorKey ;; swap workspace with monitor
-monitorKeys = [xK_Left, xK_Right]
+monitorKeys = [xK_Right, xK_Left]
 
 myStartupHook = spawn "~/.config/xmonad/startup.fish"
 
 myManageHook =
   manageHook desktopConfig
     <+> composeAll
-      [ className =? "Steam" --> doShift "launch",
+      [ className =? "steam" --> doShift "launch",
         className =? "heroic" --> doShift "launch",
+        className =? "calibre" --> doShift "launch",
         className =? "PrismLauncher" --> doShift "launch",
+        className =? "KeePassXC" --> doShift "misc",
         className =? "Tor Browser" --> doFloat,
         isDialog --> doFloat
       ]
@@ -82,10 +84,8 @@ myLayoutHook =
   avoidStruts $
     smartBorders $
       toggleLayouts full $
-        onWorkspace "0" grid $
-          tall
-            ||| center
-            ||| grid
+        onWorkspaces ["misc", "launch"] grid $
+            tall ||| center ||| grid
   where
     tall = renamed [Replace "layout: tall"] $ magnifierOff $ Tall 1 (1 / 12) (1 / 2)
     center = renamed [Replace "layout: center"] $ magnifierOff $ ThreeColMid 1 (1 / 12) (1 / 2)
