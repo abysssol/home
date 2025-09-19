@@ -1,0 +1,9 @@
+(
+    rules: "",
+    model: "pc104",
+    layout: "us,gr",
+    variant: ",nodeadkeys",
+    options: Some("terminate:ctrl_alt_bksp,compose:menu"),
+    repeat_delay: 600,
+    repeat_rate: 25,
+)

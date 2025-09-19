@@ -1,0 +1,265 @@
+{
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Shift,
+        ],
+        key: "h",
+    ): Disable,
+    (
+        modifiers: [
+            Alt,
+            Shift,
+        ],
+        key: "Tab",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "m",
+    ): Minimize,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Shift,
+        ],
+        key: "j",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "h",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Alt,
+        ],
+        key: "k",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "k",
+    ): Spawn("keepassxc"),
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "h",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "c",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Alt,
+        ],
+        key: "x",
+    ): Disable,
+    (
+        modifiers: [
+            Alt,
+        ],
+        key: "Tab",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "g",
+    ): ToggleSticky,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "d",
+    ): SwapWindow,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "l",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "x",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "k",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "j",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Alt,
+            Shift,
+        ],
+        key: "l",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Shift,
+        ],
+        key: "k",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+            Shift,
+        ],
+        key: "l",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "l",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "h",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Alt,
+        ],
+        key: "h",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Alt,
+        ],
+        key: "l",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Alt,
+            Shift,
+        ],
+        key: "j",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "x",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "p",
+    ): Resizing(Outwards),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "l",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "k",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "j",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "r",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Alt,
+            Shift,
+        ],
+        key: "k",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "r",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "p",
+    ): Resizing(Inwards),
+    (
+        modifiers: [
+            Super,
+            Alt,
+            Shift,
+        ],
+        key: "h",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "j",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Alt,
+        ],
+        key: "j",
+    ): Disable,
+}
