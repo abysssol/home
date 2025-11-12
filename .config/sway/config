@@ -14,7 +14,7 @@ set $right Right
 set $term alacritty
 
 # Web browser
-set $browser librewolf
+set $browser firefox
 
 # Application launchers
 set $run dmm ~/.config/dmm/run.toml
@@ -108,29 +108,25 @@ bindsym {
     $mod+b exec $browser
 
     # Kill focused window
-    $mod+Shift+c kill
+    $mod+q kill
 
     # Program menu
-    $mod+r exec $run
+    $mod+Slash exec $run
 
-    # Common program
-    $mod+Shift+r exec $common
+    # Common programs
+    $mod+Shift+Slash exec $common
 
     # System commands
-    $mod+q exec $system
+    $mod+Shift+q exec $system
 
     # Reload configuration
-    $mod+Shift+q reload
+    $mod+Control+q reload
 
     # Exit sway
-    $mod+Control+Shift+q exit
+    $mod+Control+Shift+Escape exit
 
     # Lock screen
-    $mod+Shift+z exec lock-sway
-
-    # Enable/disable auto hiding cursor after inactivity
-    $mod+p seat * hide_cursor 5000
-    $mod+Shift+p seat * hide_cursor 0
+    $mod+Shift+Escape exec lock-sway
 
     #
     ### Windows
